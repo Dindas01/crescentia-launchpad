@@ -4,11 +4,16 @@ const HeroSection = () => {
       <div className="container-custom py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fadeInUp">
-            <h1 className="heading-1 text-gray-900 mb-6">Impulsionamos o crescimento da sua empresa com fundos e incentivos</h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">Ajudamos empresas a identificar e captar fundos como o PRR e PT2030, estruturando candidaturas de sucesso e apoiando o crescimento sustentável.</p>
+            <h1 className="heading-1 text-gray-900 mb-6 font-montserrat">
+              Faz crescer o teu negócio com estratégia e financiamento inteligente.
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+              Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
+            </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary">Agendar Consulta Gratuita</a>
-              <a href="#services" className="py-2 px-6 border border-business-600 text-business-600 rounded-md font-semibold hover:bg-business-50 transition-colors duration-300">Ver Serviços</a>
+              <a href="#contact" className="btn-primary">
+                Marca a tua consulta gratuita e descobre o que podemos conquistar juntos.
+              </a>
             </div>
           </div>
           
