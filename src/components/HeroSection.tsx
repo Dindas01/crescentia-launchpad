@@ -10,16 +10,14 @@ const HeroSection = () => {
               <a href="#contact" className="btn-primary">
                 Schedule a Consultation
               </a>
-              <a href="#services" className="py-2 px-6 border border-business-600 text-business-600 rounded-md font-semibold hover:bg-business-50 transition-colors duration-300">
-                Explore Services
-              </a>
+              <a href="#services" className="py-2 px-6 border border-business-600 text-business-600 rounded-md font-semibold hover:bg-business-50 transition-colors duration-300">Ver Serviços</a>
             </div>
           </div>
           
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
             <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
               <ChartBar className="text-business-600 mb-4" size={32} />
-              <h3 className="font-bold text-xl mb-2">Strategic Planning</h3>
+              <h3 className="font-bold text-xl mb-2">Apoio na Obtenção de Fundos e Incentivos</h3>
               <p className="text-gray-600">Develop roadmaps for sustainable business growth</p>
             </div>
             
