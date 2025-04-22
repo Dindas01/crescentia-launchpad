@@ -7,9 +7,7 @@ const HeroSection = () => {
             <h1 className="heading-1 text-gray-900 mb-6">Impulsionamos o crescimento da sua empresa com fundos e incentivos</h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">Ajudamos empresas a identificar e captar fundos como o PRR e PT2030, estruturando candidaturas de sucesso e apoiando o crescimento sustentável.</p>
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary">
-                Schedule a Consultation
-              </a>
+              <a href="#contact" className="btn-primary">Agendar Consulta Gratuita</a>
               <a href="#services" className="py-2 px-6 border border-business-600 text-business-600 rounded-md font-semibold hover:bg-business-50 transition-colors duration-300">Ver Serviços</a>
             </div>
           </div>
