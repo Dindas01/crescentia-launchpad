@@ -12,7 +12,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
-          <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Porquê Nós</a>
+          <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Nós</a>
           <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
           <a href="#contact" className="btn-primary">Get Started</a>
         </nav>
