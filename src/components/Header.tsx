@@ -8,7 +8,12 @@ const Header = () => {
   return (
     <header className="py-4 bg-business-50/60 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-business-100 rounded-b-xl">
       <div className="container-custom flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <img 
+            src="/lovable-uploads/282ad18d-ef25-415e-8374-71299701ce4e.png" 
+            alt="Stellar Growth Logo" 
+            className="h-10 w-auto"
+          />
           <a href="/" className="text-2xl font-bold text-business-700">Stellar Growth</a>
         </div>
         
