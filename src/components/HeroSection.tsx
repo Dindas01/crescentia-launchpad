@@ -1,19 +1,11 @@
-
 import { ChartBar, Users } from "lucide-react";
-
 const HeroSection = () => {
-  return (
-    <section className="bg-gradient-to-br from-gray-50 to-business-50 min-h-[calc(100vh-76px)] flex items-center">
+  return <section className="bg-gradient-to-br from-gray-50 to-business-50 min-h-[calc(100vh-76px)] flex items-center">
       <div className="container-custom py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fadeInUp">
-            <h1 className="heading-1 text-gray-900 mb-6">
-              Accelerate Your Business Growth
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-              Strategic consulting solutions that drive results. We help businesses optimize operations, 
-              increase revenue, and achieve sustainable growth.
-            </p>
+            <h1 className="heading-1 text-gray-900 mb-6">Impulsionamos o crescimento da sua empresa com fundos e incentivos</h1>
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">Ajudamos empresas a identificar e captar fundos como o PRR e PT2030, estruturando candidaturas de sucesso e apoiando o crescimento sustentável.</p>
             <div className="flex flex-wrap gap-4">
               <a href="#contact" className="btn-primary">
                 Schedule a Consultation
@@ -49,8 +41,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
