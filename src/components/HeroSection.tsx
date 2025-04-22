@@ -1,6 +1,32 @@
-import { ChartBar, Users } from "lucide-react";
+
+import { Euro, CalendarDays, ChartBar, Rocket } from "lucide-react";
+
+const infoCards = [
+  {
+    icon: Euro,
+    title: "💶 +23 mil milhões disponíveis até 2030",
+    description: "Portugal tem mais de 23 mil milhões de euros disponíveis através de fundos europeus como o PRR e o Portugal 2030. Vais ficar de fora?",
+  },
+  {
+    icon: CalendarDays,
+    title: "📅 Próximas candidaturas já abertas",
+    description: "Muitos avisos estão abertos ou prestes a abrir — quem estiver preparado, entra primeiro. Estás pronto para aproveitar?",
+  },
+  {
+    icon: ChartBar,
+    title: "📊 70% dos empresários desconhecem os apoios certos",
+    description: "Grande parte das PME perde oportunidades por falta de informação ou apoio técnico. Informa-te e toma a dianteira.",
+  },
+  {
+    icon: Rocket,
+    title: "🚀 Apoios até 85% a fundo perdido",
+    description: "Alguns programas financiam até 85% dos custos dos teus projetos. Isto é investimento sem risco para crescer.",
+  },
+];
+
 const HeroSection = () => {
-  return <section className="bg-gradient-to-br from-gray-50 to-business-50 min-h-[calc(100vh-76px)] flex items-center">
+  return (
+    <section className="bg-gradient-to-br from-gray-50 to-business-50 min-h-[calc(100vh-76px)] flex items-center">
       <div className="container-custom py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fadeInUp">
@@ -16,32 +42,24 @@ const HeroSection = () => {
               </a>
             </div>
           </div>
-          
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
-            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <ChartBar className="text-business-600 mb-4" size={32} />
-              <h3 className="font-bold text-xl mb-2">Apoio na Obtenção de Fundos e Incentivos</h3>
-              <p className="text-gray-600">Develop roadmaps for sustainable business growth</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <Users className="text-business-600 mb-4" size={32} />
-              <h3 className="font-bold text-xl mb-2">Team Development</h3>
-              <p className="text-gray-600">Build high-performing teams that drive success</p>
-            </div>
-            
-            <div className="bg-business-600 text-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-              <h3 className="font-bold text-xl mb-2">95%</h3>
-              <p className="text-white/90">Client satisfaction rate across our services</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
-              <h3 className="font-bold text-xl mb-2">Business Impact</h3>
-              <p className="text-gray-600">Transforming challenges into opportunities</p>
-            </div>
+            {infoCards.map((card, idx) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={card.title}
+                  className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start"
+                >
+                  <Icon className="text-business-600 mb-4" size={32} />
+                  <h3 className="font-bold text-xl mb-2">{card.title}</h3>
+                  <p className="text-gray-600">{card.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default HeroSection;
