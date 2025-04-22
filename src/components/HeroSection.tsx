@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ChartBar, Users, Briefcase } from "lucide-react";
+
+import { ChartBar, Users } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -25,15 +25,6 @@ const HeroSection = () => {
           </div>
           
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
-            <div className="relative overflow-hidden rounded-xl">
-              <img
-                src="/photo-1519389950473-47ba0277781c"
-                alt="Team Collaboration"
-                className="w-full h-48 object-cover"
-              />
-              <div className="absolute inset-0 bg-business-600/10"></div>
-            </div>
-            
             <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
               <ChartBar className="text-business-600 mb-4" size={32} />
               <h3 className="font-bold text-xl mb-2">Strategic Planning</h3>
@@ -46,13 +37,14 @@ const HeroSection = () => {
               <p className="text-gray-600">Build high-performing teams that drive success</p>
             </div>
             
-            <div className="relative overflow-hidden rounded-xl">
-              <img
-                src="/photo-1460925895917-afdab827c52f"
-                alt="Business Analytics"
-                className="w-full h-48 object-cover"
-              />
-              <div className="absolute inset-0 bg-business-600/10"></div>
+            <div className="bg-business-600 text-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-2">95%</h3>
+              <p className="text-white/90">Client satisfaction rate across our services</p>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-2">Business Impact</h3>
+              <p className="text-gray-600">Transforming challenges into opportunities</p>
             </div>
           </div>
         </div>

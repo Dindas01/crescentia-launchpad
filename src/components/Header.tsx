@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -10,7 +9,7 @@ const Header = () => {
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/282ad18d-ef25-415e-8374-71299701ce4e.png" 
+            src="/lovable-uploads/3f87a249-bb57-48c0-97e1-854d2ec544da.png" 
             alt="Stellar Growth Logo" 
             className="h-10 w-auto"
           />
