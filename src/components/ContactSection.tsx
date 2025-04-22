@@ -1,5 +1,5 @@
 
-import { MessageSquare, Mail, Info } from 'lucide-react';
+import { Mail, Info, Facebook, Instagram } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -27,11 +27,19 @@ const ContactSection = () => {
                   </div>
                 </div>
                 
+                {/* Social Media Section */}
                 <div className="flex items-start">
-                  <MessageSquare className="mr-4 flex-shrink-0 mt-1" size={20} />
+                  <div className="mr-4 flex flex-col space-y-2 mt-1 flex-shrink-0">
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <Instagram size={20} className="hover:text-business-100 transition-colors" />
+                    </a>
+                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                      <Facebook size={20} className="hover:text-business-100 transition-colors" />
+                    </a>
+                  </div>
                   <div>
-                    <p className="font-medium">Live Chat</p>
-                    <p className="text-white/80">Available 9am-5pm EST</p>
+                    <p className="font-medium">Social Media</p>
+                    <p className="text-white/80">Connect with us on Instagram and Facebook</p>
                   </div>
                 </div>
                 
@@ -68,6 +76,18 @@ const ContactSection = () => {
                     id="email"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500"
                     placeholder="john@example.com"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500"
+                    placeholder="Your Company Name"
                   />
                 </div>
                 
