@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -6,7 +5,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="py-4 bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b">
+    <header className="py-4 bg-white/60 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 rounded-b-xl">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center">
           <a href="/" className="text-2xl font-bold text-business-700">Stellar Growth</a>
