@@ -24,7 +24,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 font-montserrat">
           <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
-          <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Nós</a>
+          <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Sobre Nós</a>
           <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
           <CallToActionButton
             href="#contact"
@@ -49,7 +49,7 @@ const Header = () => {
               Serviços
             </a>
             <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Nós
+              Sobre Nós
             </a>
             <a href="#contact" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Contacto

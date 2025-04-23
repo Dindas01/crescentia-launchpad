@@ -1,13 +1,15 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import CallToActionButton from "./CallToActionButton";
+import ModernContactButton from "./ModernContactButton";
 
 const AREAS = [
   "Indústria",
-  "Comércio", 
-  "Serviços", 
+  "Comércio",
+  "Serviços",
   "Turismo",
   "Tecnologia",
   "Outro",
@@ -24,7 +26,8 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-const contactImg = "/lovable-uploads/a33730b7-329c-48a5-a248-9c9f3eb73086.png";
+// Imagem corrigida pelo utilizador
+const contactImg = "/lovable-uploads/eecc81b9-24e3-4934-8b13-b52dd184d679.png";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -39,7 +42,9 @@ const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({
@@ -58,7 +63,10 @@ const ContactSection = () => {
   };
 
   const trackPlausibleEvent = () => {
-    if (typeof window !== "undefined" && typeof (window as any).plausible === "function") {
+    if (
+      typeof window !== "undefined" &&
+      typeof (window as any).plausible === "function"
+    ) {
       (window as any).plausible("Peça_analise_gratuita_click");
     }
   };
@@ -81,7 +89,7 @@ const ContactSection = () => {
           </p>
         </div>
         <div className="text-center mb-8 max-w-xl mx-auto">
-          <h3 className="font-norwester text-2xl md:text-3xl text-business-800 mb-1">
+          <h3 className="font-norwester text-2xl md:text-3xl text-business-800 mb-1" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>
             Peça uma Análise Gratuita
           </h3>
           <p className="font-montserrat text-lg text-gray-700">
@@ -104,7 +112,7 @@ const ContactSection = () => {
               style={{
                 minHeight: "190px",
                 maxHeight: "420px",
-                objectFit: "cover"
+                objectFit: "cover",
               }}
             />
           </div>
@@ -242,15 +250,9 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <CallToActionButton
-                      type="submit"
-                      ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-                      className="mt-2"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                      onClick={trackPlausibleEvent}
-                    >
+                    <ModernContactButton>
                       Peça uma análise gratuita
-                    </CallToActionButton>
+                    </ModernContactButton>
                   </div>
                 </form>
               ) : (
@@ -267,8 +269,17 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+      {/* Garantir Norwester carregada para headings */}
+      <style>{`
+        @font-face {
+          font-family: 'Norwester';
+          src: url('/fonts/Norwester.otf') format('opentype');
+          font-display: swap;
+        }
+      `}</style>
     </section>
   );
 };
 
 export default ContactSection;
+
