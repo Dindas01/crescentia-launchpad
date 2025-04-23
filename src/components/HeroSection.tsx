@@ -5,22 +5,22 @@ const infoCards = [
   {
     icon: Euro,
     title: "Mais de 23 mil milhões disponíveis até 2030",
-    description: "Portugal tem ao dispor mais de 23 mil milhões de euros através de fundos comunitários como o PRR e o Portugal 2030. Trata-se de uma oportunidade histórica para investir no crescimento empresarial com apoio financeiro concreto.",
+    description: "Financiamento europeu para modernizar, inovar e crescer. Está ao teu alcance.",
   },
   {
     icon: CalendarDays,
     title: "Candidaturas já em curso e novas oportunidades a abrir",
-    description: "Diversos programas estão atualmente ativos e outros serão lançados brevemente. As empresas que atuarem agora terão acesso prioritário ao financiamento disponível. Antecipar é garantir.",
+    description: "Alguns programas já abriram. Agir agora é garantir acesso.",
   },
   {
     icon: ChartBar,
     title: "70% das PME não aproveitam os apoios por falta de informação",
-    description: "Estudos mostram que a maioria das pequenas e médias empresas não sabe que pode beneficiar destes incentivos. Com apoio técnico adequado, é possível transformar esta realidade em vantagem competitiva.",
+    description: "A maioria perde oportunidades. Informa-te e destaca-te.",
   },
   {
     icon: Rocket,
     title: "Financiamento até 85% a fundo perdido",
-    description: "Alguns programas cobrem até 85% dos custos de projetos estratégicos, sem obrigatoriedade de reembolso. É uma oportunidade para investir com risco quase nulo e retorno sustentável.",
+    description: "Investimentos com apoio direto. O risco é mínimo, o retorno é real.",
   },
 ];
 
@@ -37,13 +37,17 @@ const HeroSection = () => {
               Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn-primary">
-                Marca a tua consulta gratuita e descobre o que podemos conquistar juntos.
+              <a
+                href="#contact"
+                className="bg-business-200 hover:bg-business-300 text-gray-900 text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Peça uma análise gratuita
               </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
-            {infoCards.map((card, idx) => {
+            {infoCards.map((card) => {
               const Icon = card.icon;
               return (
                 <div
@@ -63,4 +67,3 @@ const HeroSection = () => {
   );
 };
 export default HeroSection;
-
