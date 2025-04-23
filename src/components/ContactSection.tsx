@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -245,7 +244,6 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    {/* Botão call to action perfeitamente centrado, responsivo e com texto visível */}
                     <Button
                       type="submit"
                       className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base flex items-center justify-center transition-colors duration-200 shadow-md"
@@ -253,17 +251,14 @@ const ContactSection = () => {
                         fontFamily: "'Montserrat', sans-serif",
                         minHeight: 52,
                         height: "auto",
-                        paddingTop: "0.95rem",
-                        paddingBottom: "0.95rem",
-                        paddingLeft: "2rem",
-                        paddingRight: "2rem",
+                        padding: "0.95rem 2rem",
                         lineHeight: 1.2,
                         whiteSpace: "normal",
                         wordBreak: "break-word",
                       }}
                       onClick={trackPlausibleEvent}
                     >
-                      <span className="w-full flex justify-center items-center">
+                      <span className="w-full text-center">
                         Peça uma análise gratuita
                       </span>
                     </Button>
