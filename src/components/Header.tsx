@@ -26,7 +26,38 @@ const Header = () => {
           <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
           <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Nós</a>
           <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
-          <a href="#contact" className="btn-primary">Get Started</a>
+          <a
+            href="#contact"
+            aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+            className="
+              bg-business-200
+              hover:bg-business-300
+              text-gray-900
+              rounded-lg
+              font-montserrat
+              font-semibold
+              text-base
+              py-3
+              px-8
+              transition-colors
+              duration-200
+              shadow-md
+              whitespace-normal
+              leading-snug
+              min-h-[52px]
+              flex items-center
+              justify-center
+            "
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              lineHeight: 1.2,
+              wordBreak: "break-word",
+              textAlign: "center",
+              boxSizing: "border-box",
+            }}
+          >
+            Análise gratuita
+          </a>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -48,8 +79,38 @@ const Header = () => {
             <a href="#contact" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Contact
             </a>
-            <a href="#contact" className="btn-primary inline-block text-center" onClick={() => setMobileMenuOpen(false)}>
-              Get Started
+            <a
+              href="#contact"
+              aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+              className="
+                bg-business-200
+                hover:bg-business-300
+                text-gray-900
+                rounded-lg
+                font-montserrat
+                font-semibold
+                text-base
+                py-3
+                px-8
+                transition-colors
+                duration-200
+                shadow-md
+                whitespace-normal
+                leading-snug
+                min-h-[52px]
+                flex items-center
+                justify-center
+              "
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                lineHeight: 1.2,
+                wordBreak: "break-word",
+                textAlign: "center",
+                boxSizing: "border-box",
+              }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Análise gratuita
             </a>
           </div>
         </div>

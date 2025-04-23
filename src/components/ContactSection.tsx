@@ -25,7 +25,7 @@ const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
 // Imagem de consultoria & gestão enviada pelo utilizador
-const contactImg = "/lovable-uploads/eecc81b9-24e3-4934-8b13-b52dd184d679.png"; // Gestão e consultoria empresarial
+const contactImg = "/lovable-uploads/282ad18d-ef25-415e-8374-71299701ce4e.png"; // Gestão e consultoria empresarial
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -246,15 +246,34 @@ const ContactSection = () => {
                   <div>
                     <Button
                       type="submit"
-                      className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base flex items-center justify-center transition-colors duration-200 shadow-md"
+                      aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+                      className="
+                        bg-business-200
+                        hover:bg-business-300
+                        text-gray-900
+                        font-semibold
+                        rounded-lg
+                        w-full
+                        font-montserrat
+                        text-base
+                        flex
+                        items-center
+                        justify-center
+                        transition-colors
+                        duration-200
+                        shadow-md
+                        py-3
+                        px-8
+                        whitespace-normal
+                        leading-snug
+                        min-h-[52px]
+                      "
                       style={{
                         fontFamily: "'Montserrat', sans-serif",
-                        minHeight: 52,
-                        height: "auto",
-                        padding: "0.95rem 2rem",
                         lineHeight: 1.2,
-                        whiteSpace: "normal",
                         wordBreak: "break-word",
+                        textAlign: "center",
+                        boxSizing: "border-box",
                       }}
                       onClick={trackPlausibleEvent}
                     >
