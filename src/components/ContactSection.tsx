@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import CallToActionButton from "./CallToActionButton";
 
 const AREAS = [
   "Indústria",
@@ -24,7 +25,6 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-// Imagem de consultoria & gestão enviada pelo utilizador
 const contactImg = "/lovable-uploads/282ad18d-ef25-415e-8374-71299701ce4e.png"; // Gestão e consultoria empresarial
 
 const ContactSection = () => {
@@ -58,7 +58,6 @@ const ContactSection = () => {
     }));
   };
 
-  // Função para enviar evento de clique para o Plausible
   const trackPlausibleEvent = () => {
     if (typeof window !== "undefined" && typeof (window as any).plausible === "function") {
       (window as any).plausible("Peça_analise_gratuita_click");
@@ -67,7 +66,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    trackPlausibleEvent(); // rastrear conversão
+    trackPlausibleEvent();
     setSubmitted(true);
   };
 
@@ -244,43 +243,15 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <Button
+                    <CallToActionButton
                       type="submit"
-                      aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-                      className="
-                        bg-business-200
-                        hover:bg-business-300
-                        text-gray-900
-                        font-semibold
-                        rounded-lg
-                        w-full
-                        font-montserrat
-                        text-base
-                        flex
-                        items-center
-                        justify-center
-                        transition-colors
-                        duration-200
-                        shadow-md
-                        py-3
-                        px-8
-                        whitespace-normal
-                        leading-snug
-                        min-h-[52px]
-                      "
-                      style={{
-                        fontFamily: "'Montserrat', sans-serif",
-                        lineHeight: 1.2,
-                        wordBreak: "break-word",
-                        textAlign: "center",
-                        boxSizing: "border-box",
-                      }}
+                      ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+                      className="mt-2"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
                       onClick={trackPlausibleEvent}
                     >
-                      <span className="w-full text-center">
-                        Peça uma análise gratuita
-                      </span>
-                    </Button>
+                      Peça uma análise gratuita
+                    </CallToActionButton>
                   </div>
                 </form>
               ) : (

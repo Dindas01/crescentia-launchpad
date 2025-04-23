@@ -1,6 +1,6 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import CallToActionButton from "./CallToActionButton";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,38 +26,13 @@ const Header = () => {
           <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
           <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Nós</a>
           <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
-          <a
+          <CallToActionButton
             href="#contact"
-            aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-            className="
-              bg-business-200
-              hover:bg-business-300
-              text-gray-900
-              rounded-lg
-              font-montserrat
-              font-semibold
-              text-base
-              py-3
-              px-8
-              transition-colors
-              duration-200
-              shadow-md
-              whitespace-normal
-              leading-snug
-              min-h-[52px]
-              flex items-center
-              justify-center
-            "
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              lineHeight: 1.2,
-              wordBreak: "break-word",
-              textAlign: "center",
-              boxSizing: "border-box",
-            }}
+            ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+            className="ml-2"
           >
             Análise gratuita
-          </a>
+          </CallToActionButton>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -68,50 +43,25 @@ const Header = () => {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-business-50 border-b border-business-100 shadow-lg">
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-business-50 border-b border-business-100 shadow-lg z-40">
           <div className="container-custom py-4 flex flex-col space-y-4 font-montserrat">
             <a href="#services" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Services
+              Serviços
             </a>
             <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Why Us
+              Nós
             </a>
             <a href="#contact" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Contact
+              Contacto
             </a>
-            <a
+            <CallToActionButton
               href="#contact"
-              aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-              className="
-                bg-business-200
-                hover:bg-business-300
-                text-gray-900
-                rounded-lg
-                font-montserrat
-                font-semibold
-                text-base
-                py-3
-                px-8
-                transition-colors
-                duration-200
-                shadow-md
-                whitespace-normal
-                leading-snug
-                min-h-[52px]
-                flex items-center
-                justify-center
-              "
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                lineHeight: 1.2,
-                wordBreak: "break-word",
-                textAlign: "center",
-                boxSizing: "border-box",
-              }}
+              ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+              className="w-full"
               onClick={() => setMobileMenuOpen(false)}
             >
               Análise gratuita
-            </a>
+            </CallToActionButton>
           </div>
         </div>
       )}
