@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const AREAS = [
   "Indústria",
-  "Comércio",
+  "Comércio", 
   "Serviços", 
   "Turismo",
   "Tecnologia",
@@ -24,9 +24,9 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-// Nova imagem profissional (gestão/consultoria empresarial)
+// Nova imagem institucional (consultoria/gestão de empresas)
 const contactImg =
-  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80";
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"; // Reunião de consultoria de negócios
 
 const ContactSection = () => {
   const [form, setForm] = useState({
