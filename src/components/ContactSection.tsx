@@ -25,6 +25,10 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
+// Imagem institucional relacionada com crescimento empresarial
+const contactImg =
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80";
+
 const ContactSection = () => {
   const [form, setForm] = useState({
     nome: "",
@@ -73,121 +77,162 @@ const ContactSection = () => {
             Quer estejas a começar um novo projeto ou a procurar novos caminhos para crescer, estou aqui para ajudar.
           </p>
         </div>
-        <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="p-8">
-            {!submitted ? (
-              <form className="space-y-6" onSubmit={handleSubmit} autoComplete="off">
-                <div>
-                  <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Nome<span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="nome"
-                    name="nome"
-                    type="text"
-                    className="font-montserrat"
-                    value={form.nome}
-                    onChange={handleChange}
-                    placeholder="João Silva"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Email profissional<span className="text-red-500">*</span>
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    inputMode="email"
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    className="font-montserrat"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="joao@minhaempresa.pt"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Nome da empresa
-                  </label>
-                  <Input
-                    id="empresa"
-                    name="empresa"
-                    type="text"
-                    className="font-montserrat"
-                    value={form.empresa}
-                    onChange={handleChange}
-                    placeholder="Silva & Filhos, Lda"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Área de atividade
-                  </label>
-                  <select
-                    id="area"
-                    name="area"
-                    className="font-montserrat w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500 bg-white"
-                    value={form.area}
-                    onChange={handleChange}
-                  >
-                    <option value="">Seleciona uma opção</option>
-                    {AREAS.map((area) => (
-                      <option key={area} value={area}>
-                        {area}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <span className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Interesse principal
-                  </span>
-                  <div className="flex flex-col gap-2">
-                    {INTERESSES.map((item) => (
-                      <label key={item.value} className="flex items-center gap-2 font-montserrat">
-                        <Checkbox
-                          checked={form.interesses.includes(item.value)}
-                          onCheckedChange={() => handleCheckbox(item.value)}
-                          id={item.value}
-                        />
-                        <span>{item.label}</span>
-                      </label>
-                    ))}
+        {/* Contexto extra acima do card */}
+        <div className="text-center mb-8 max-w-xl mx-auto">
+          <h3 className="font-norwester text-2xl md:text-3xl text-business-800 mb-1">Peça uma Análise Gratuita</h3>
+          <p className="font-montserrat text-lg text-gray-700">
+            Receba uma avaliação personalizada sobre as melhores oportunidades de financiamento e crescimento para o seu negócio.
+          </p>
+        </div>
+
+        <div
+          className="flex flex-col md:flex-row-reverse items-stretch max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+          style={{
+            boxShadow: "0 8px 32px 0 rgba(38, 70, 47, 0.09)",
+            border: "1px solid #F2F8F2",
+          }}
+        >
+          {/* Imagem lateral no desktop, superior no mobile */}
+          <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-business-50 border-b md:border-b-0 md:border-l overflow-hidden">
+            <img
+              src={contactImg}
+              alt="Consultoria empresarial, crescimento"
+              className="object-cover w-full h-48 md:h-full"
+              loading="lazy"
+              style={{
+                minHeight: "190px",
+                maxHeight: "420px",
+              }}
+            />
+          </div>
+
+          {/* Formulário visual em card */}
+          <div className="w-full md:w-7/12 flex items-center">
+            <div className="p-6 md:p-10 w-full">
+              {!submitted ? (
+                <form className="space-y-6 md:space-y-7" onSubmit={handleSubmit} autoComplete="off">
+                  <div>
+                    <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Nome<span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      id="nome"
+                      name="nome"
+                      type="text"
+                      className="font-montserrat h-11"
+                      value={form.nome}
+                      onChange={handleChange}
+                      placeholder="João Silva"
+                      required
+                    />
                   </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Email profissional<span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      inputMode="email"
+                      autoCapitalize="off"
+                      autoCorrect="off"
+                      className="font-montserrat h-11"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="joao@minhaempresa.pt"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Nome da empresa
+                    </label>
+                    <Input
+                      id="empresa"
+                      name="empresa"
+                      type="text"
+                      className="font-montserrat h-11"
+                      value={form.empresa}
+                      onChange={handleChange}
+                      placeholder="Silva & Filhos, Lda"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Área de atividade
+                    </label>
+                    <select
+                      id="area"
+                      name="area"
+                      className="font-montserrat w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500 bg-white h-11"
+                      value={form.area}
+                      onChange={handleChange}
+                    >
+                      <option value="">Seleciona uma opção</option>
+                      {AREAS.map((area) => (
+                        <option key={area} value={area}>
+                          {area}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <span className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Interesse principal
+                    </span>
+                    <div className="flex flex-col gap-2">
+                      {INTERESSES.map((item) => (
+                        <label key={item.value} className="flex items-center gap-2 font-montserrat">
+                          {/* Checkboxes compactos */}
+                          <Checkbox
+                            checked={form.interesses.includes(item.value)}
+                            onCheckedChange={() => handleCheckbox(item.value)}
+                            id={item.value}
+                            style={{ width: 18, height: 18, minWidth: 18, minHeight: 18, marginRight: 2 }}
+                            className="!w-[18px] !h-[18px]"
+                          />
+                          <span className="text-sm">{item.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                      Mensagem
+                    </label>
+                    <Textarea
+                      id="mensagem"
+                      name="mensagem"
+                      rows={4}
+                      className="font-montserrat"
+                      value={form.mensagem}
+                      onChange={handleChange}
+                      placeholder={defaultMensagem}
+                    />
+                  </div>
+                  <div>
+                    {/* Call to action button ajustado */}
+                    <Button
+                      type="submit"
+                      className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base px-8 py-3 flex items-center justify-center transition-colors duration-200 shadow-md"
+                      style={{ fontFamily: "'Montserrat', sans-serif", minHeight: 48 }}
+                    >
+                      Peça uma análise gratuita
+                    </Button>
+                    {/* Selo de confiança */}
+                    <div className="text-center mt-4 font-montserrat text-gray-600 text-sm">
+                      <span className="inline-block align-middle bg-business-50 rounded px-3 py-1 font-medium"><span className="text-business-700 text-lg mr-1">✓</span> Mais de 40 PME já apoiadas com sucesso | 95% de satisfação</span>
+                    </div>
+                  </div>
+                </form>
+              ) : (
+                <div className="text-center py-8">
+                  <h3 className="text-business-700 font-bold text-2xl font-montserrat mb-3">Obrigado pelo seu interesse!</h3>
+                  <p className="text-gray-700">Entraremos em contacto consigo em breve.</p>
                 </div>
-                <div>
-                  <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-1 font-montserrat">
-                    Mensagem
-                  </label>
-                  <Textarea
-                    id="mensagem"
-                    name="mensagem"
-                    rows={4}
-                    className="font-montserrat"
-                    value={form.mensagem}
-                    onChange={handleChange}
-                    placeholder={defaultMensagem}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base py-3 px-8 transition-colors duration-200 shadow-md"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  Peça uma análise gratuita
-                </Button>
-              </form>
-            ) : (
-              <div className="text-center py-8">
-                <h3 className="text-business-700 font-bold text-2xl font-montserrat mb-3">Obrigado pelo seu interesse!</h3>
-                <p className="text-gray-700">Entraremos em contacto consigo em breve.</p>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
