@@ -1,22 +1,19 @@
-
 const Footer = () => {
-  return (
-    <footer className="bg-[#1A1F2C] text-gray-100 pt-14 pb-7 font-montserrat">
+  return <footer className="bg-[#1A1F2C] text-gray-100 pt-14 pb-7 font-montserrat">
       <div className="container-custom">
         <div className="grid md:grid-cols-3 gap-10 md:gap-16">
           {/* Sobre a Crescentia */}
           <div>
-            <h3
-              className="text-xl font-bold mb-4 text-white font-norwester tracking-wide"
-              style={{
-                fontFamily: "Norwester, Montserrat, sans-serif",
-                letterSpacing: "0.02em"
-              }}
-            >
+            <h3 className="text-xl font-bold mb-4 text-white font-norwester tracking-wide" style={{
+            fontFamily: "Norwester, Montserrat, sans-serif",
+            letterSpacing: "0.02em"
+          }}>
               Sobre a Crescentia
             </h3>
             <div className="space-y-2">
-              <p className="font-bold text-lg text-business-300 font-norwester" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>
+              <p className="font-bold text-lg text-business-300 font-norwester" style={{
+              fontFamily: "Norwester, Montserrat, sans-serif"
+            }}>
                 Crescentia Consultoria
               </p>
               <p className="text-gray-300 leading-relaxed font-montserrat">
@@ -26,7 +23,9 @@ const Footer = () => {
           </div>
           {/* Ligações Rápidas */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white font-norwester" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>
+            <h3 className="text-xl font-bold mb-4 text-white font-norwester" style={{
+            fontFamily: "Norwester, Montserrat, sans-serif"
+          }}>
               Ligações Rápidas
             </h3>
             <ul className="space-y-2 text-gray-300 text-base font-montserrat">
@@ -55,7 +54,9 @@ const Footer = () => {
           </div>
           {/* Contacto */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white font-norwester" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>Contacto</h3>
+            <h3 className="text-xl font-bold mb-4 text-white font-norwester" style={{
+            fontFamily: "Norwester, Montserrat, sans-serif"
+          }}>Contacto</h3>
             <ul className="space-y-2 text-gray-300 text-base font-montserrat">
               <li>
                 <span className="font-semibold text-gray-100">Email:</span>{" "}
@@ -63,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="font-semibold text-gray-100">Telefone:</span>{" "}
-                <a href="tel:+351913960220" className="hover:text-business-300 transition-colors">+351 913960220</a>
+                <a href="tel:+351913960220" className="hover:text-business-300 transition-colors">+351 913 960 220</a>
               </li>
               <li>Porto, Portugal</li>
             </ul>
@@ -88,8 +89,6 @@ const Footer = () => {
           font-display: swap;
         }
       `}</style>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
