@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const AREAS = [
   "Indústria",
   "Comércio",
-  "Serviços",
+  "Serviços", 
   "Turismo",
   "Tecnologia",
   "Outro",
@@ -60,8 +59,16 @@ const ContactSection = () => {
     }));
   };
 
+  // Função para enviar evento de clique para o Plausible
+  const trackPlausibleEvent = () => {
+    if (typeof window !== "undefined" && typeof (window as any).plausible === "function") {
+      (window as any).plausible("Peça_analise_gratuita_click");
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackPlausibleEvent(); // rastrear conversão
     setSubmitted(true);
   };
 
@@ -248,8 +255,10 @@ const ContactSection = () => {
                         paddingTop: 0,
                         paddingBottom: 0,
                       }}
+                      // Garantir rastreamento mesmo em submit via enter
+                      onClick={trackPlausibleEvent}
                     >
-                      <span className="w-full block py-3">
+                      <span className="w-full flex justify-center items-center py-3">
                         Peça uma análise gratuita
                       </span>
                     </Button>
@@ -274,4 +283,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
