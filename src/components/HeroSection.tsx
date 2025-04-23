@@ -4,23 +4,23 @@ import { Euro, CalendarDays, ChartBar, Rocket } from "lucide-react";
 const infoCards = [
   {
     icon: Euro,
-    title: "💶 +23 mil milhões disponíveis até 2030",
-    description: "Portugal tem mais de 23 mil milhões de euros disponíveis através de fundos europeus como o PRR e o Portugal 2030. Vais ficar de fora?",
+    title: "Mais de 23 mil milhões disponíveis até 2030",
+    description: "Portugal tem ao dispor mais de 23 mil milhões de euros através de fundos comunitários como o PRR e o Portugal 2030. Trata-se de uma oportunidade histórica para investir no crescimento empresarial com apoio financeiro concreto.",
   },
   {
     icon: CalendarDays,
-    title: "📅 Próximas candidaturas já abertas",
-    description: "Muitos avisos estão abertos ou prestes a abrir — quem estiver preparado, entra primeiro. Estás pronto para aproveitar?",
+    title: "Candidaturas já em curso e novas oportunidades a abrir",
+    description: "Diversos programas estão atualmente ativos e outros serão lançados brevemente. As empresas que atuarem agora terão acesso prioritário ao financiamento disponível. Antecipar é garantir.",
   },
   {
     icon: ChartBar,
-    title: "📊 70% dos empresários desconhecem os apoios certos",
-    description: "Grande parte das PME perde oportunidades por falta de informação ou apoio técnico. Informa-te e toma a dianteira.",
+    title: "70% das PME não aproveitam os apoios por falta de informação",
+    description: "Estudos mostram que a maioria das pequenas e médias empresas não sabe que pode beneficiar destes incentivos. Com apoio técnico adequado, é possível transformar esta realidade em vantagem competitiva.",
   },
   {
     icon: Rocket,
-    title: "🚀 Apoios até 85% a fundo perdido",
-    description: "Alguns programas financiam até 85% dos custos dos teus projetos. Isto é investimento sem risco para crescer.",
+    title: "Financiamento até 85% a fundo perdido",
+    description: "Alguns programas cobrem até 85% dos custos de projetos estratégicos, sem obrigatoriedade de reembolso. É uma oportunidade para investir com risco quase nulo e retorno sustentável.",
   },
 ];
 
@@ -51,7 +51,7 @@ const HeroSection = () => {
                   className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start"
                 >
                   <Icon className="text-business-600 mb-4" size={32} />
-                  <h3 className="font-bold text-xl mb-2">{card.title}</h3>
+                  <h3 className="font-bold text-xl mb-2 font-montserrat">{card.title}</h3>
                   <p className="text-gray-600">{card.description}</p>
                 </div>
               );
@@ -63,3 +63,4 @@ const HeroSection = () => {
   );
 };
 export default HeroSection;
+
