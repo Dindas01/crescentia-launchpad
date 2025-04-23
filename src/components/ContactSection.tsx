@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,9 +25,8 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-// Nova imagem institucional (consultoria/gestão de empresas)
-const contactImg =
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80"; // Reunião de consultoria de negócios
+// Imagem de consultoria & gestão enviada pelo utilizador
+const contactImg = "/lovable-uploads/eecc81b9-24e3-4934-8b13-b52dd184d679.png"; // Gestão e consultoria empresarial
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -101,12 +101,13 @@ const ContactSection = () => {
           <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-business-50 border-b md:border-b-0 md:border-l overflow-hidden">
             <img
               src={contactImg}
-              alt="Consultoria empresarial, gestão de empresas"
+              alt="Consultoria e gestão empresarial"
               className="object-cover w-full h-48 md:h-full"
               loading="lazy"
               style={{
                 minHeight: "190px",
                 maxHeight: "420px",
+                objectFit: "cover"
               }}
             />
           </div>
@@ -244,21 +245,25 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    {/* Botão call to action perfeitamente centrado e responsivo */}
+                    {/* Botão call to action perfeitamente centrado, responsivo e com texto visível */}
                     <Button
                       type="submit"
-                      className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base flex items-center justify-center transition-colors duration-200 shadow-md px-8"
+                      className="bg-business-200 hover:bg-business-300 text-gray-900 font-semibold rounded-lg w-full font-montserrat text-base flex items-center justify-center transition-colors duration-200 shadow-md"
                       style={{
                         fontFamily: "'Montserrat', sans-serif",
-                        minHeight: 48,
+                        minHeight: 52,
+                        height: "auto",
+                        paddingTop: "0.95rem",
+                        paddingBottom: "0.95rem",
+                        paddingLeft: "2rem",
+                        paddingRight: "2rem",
                         lineHeight: 1.2,
-                        paddingTop: 0,
-                        paddingBottom: 0,
+                        whiteSpace: "normal",
+                        wordBreak: "break-word",
                       }}
-                      // Garantir rastreamento mesmo em submit via enter
                       onClick={trackPlausibleEvent}
                     >
-                      <span className="w-full flex justify-center items-center py-3">
+                      <span className="w-full flex justify-center items-center">
                         Peça uma análise gratuita
                       </span>
                     </Button>
