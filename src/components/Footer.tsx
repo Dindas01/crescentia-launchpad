@@ -1,3 +1,6 @@
+
+import CallToActionButton from "./CallToActionButton";
+
 const Footer = () => {
   return <footer className="bg-[#1A1F2C] text-gray-100 pt-14 pb-7 font-montserrat">
       <div className="container-custom">
@@ -8,7 +11,7 @@ const Footer = () => {
             fontFamily: "Norwester, Montserrat, sans-serif",
             letterSpacing: "0.02em"
           }}>
-              Sobre a Crescentia
+              Sobre a <span className="font-norwester" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>Crescentia</span>
             </h3>
             <div className="space-y-2">
               <p className="font-bold text-lg text-business-300 font-norwester" style={{
@@ -19,6 +22,15 @@ const Footer = () => {
               <p className="text-gray-300 leading-relaxed font-montserrat">
                 Consultoria de gestão especializada em fundos europeus, crescimento estratégico e transformação empresarial. Ajudamos PME portuguesas a crescer com apoio certo, no momento certo.
               </p>
+              <div className="pt-4">
+                <CallToActionButton
+                  href="#contact"
+                  ariaLabel="Iniciar conversa com a Crescentia"
+                  className="mt-2 bg-business-600 hover:bg-business-700 text-white"
+                >
+                  Fala comigo agora
+                </CallToActionButton>
+              </div>
             </div>
           </div>
           {/* Ligações Rápidas */}
@@ -43,6 +55,15 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#contact" className="hover:text-business-300 transition-colors">Contactos</a>
+              </li>
+              <li>
+                <a href="/apoios-portugal2030" className="hover:text-business-300 transition-colors">Apoios Portugal 2030</a>
+              </li>
+              <li>
+                <a href="/digitalizacao-pme" className="hover:text-business-300 transition-colors">Digitalização PME</a>
+              </li>
+              <li>
+                <a href="/consultoria-estrategica" className="hover:text-business-300 transition-colors">Consultoria Estratégica</a>
               </li>
               <li>
                 <a href="#privacy" className="hover:text-business-300 transition-colors">Política de Privacidade</a>
@@ -74,7 +95,7 @@ const Footer = () => {
       <div className="border-t border-[#343950] mt-10 pt-6">
         <div className="container-custom flex flex-col md:flex-row md:justify-between md:items-center gap-2">
           <div className="text-center md:text-left text-gray-400 text-sm mb-0 font-montserrat">
-            © 2025 Crescentia Consultoria. Todos os direitos reservados.
+            © 2025 <span className="font-norwester" style={{ fontFamily: "Norwester, Montserrat, sans-serif" }}>Crescentia</span> Consultoria. Todos os direitos reservados.
           </div>
           <div className="text-center md:text-right text-business-200 text-sm font-semibold font-montserrat">
             Onde a tua visão encontra direção.

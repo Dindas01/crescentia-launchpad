@@ -8,7 +8,7 @@ const FloatingWhatsappButton = () => (
     href={whatsappUrl}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contactar via WhatsApp"
+    aria-label="Contactar consultor de fundos europeus via WhatsApp"
     className="fixed z-50 right-5 bottom-5 md:right-8 md:bottom-8"
     style={{ textDecoration: "none" }}
   >
@@ -26,8 +26,9 @@ const FloatingWhatsappButton = () => (
         height: "60px",
         boxShadow: "0 4px 16px 0 rgba(40,70,50,0.13)",
       }}
+      title="Chat com consultor - Crescentia Consultoria"
     >
-      <MessageCircle className="text-white w-8 h-8" />
+      <MessageCircle className="text-white w-8 h-8" aria-hidden="true" />
     </button>
 
     {/* Responsividade para tamanho em desktop */}
@@ -47,4 +48,3 @@ const FloatingWhatsappButton = () => (
 );
 
 export default FloatingWhatsappButton;
-
