@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
 import CallToActionButton from "./CallToActionButton";
 
 const AREAS = [
@@ -25,7 +24,7 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-const contactImg = "/lovable-uploads/282ad18d-ef25-415e-8374-71299701ce4e.png"; // Gestão e consultoria empresarial
+const contactImg = "/lovable-uploads/a33730b7-329c-48a5-a248-9c9f3eb73086.png";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -99,7 +98,7 @@ const ContactSection = () => {
           <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-business-50 border-b md:border-b-0 md:border-l overflow-hidden">
             <img
               src={contactImg}
-              alt="Consultoria e gestão empresarial"
+              alt="Análise e consultoria empresarial"
               className="object-cover w-full h-48 md:h-full"
               loading="lazy"
               style={{
