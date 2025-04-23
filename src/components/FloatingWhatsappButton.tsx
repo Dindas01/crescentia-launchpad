@@ -1,5 +1,5 @@
 
-import { Whatsapp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const whatsappUrl = "https://wa.me/351912345678";
 
@@ -27,7 +27,7 @@ const FloatingWhatsappButton = () => (
         boxShadow: "0 4px 16px 0 rgba(40,70,50,0.13)",
       }}
     >
-      <Whatsapp className="text-white w-8 h-8" />
+      <MessageCircle className="text-white w-8 h-8" />
     </button>
 
     {/* Responsividade para tamanho em desktop */}
@@ -37,7 +37,7 @@ const FloatingWhatsappButton = () => (
           width: 50px !important;
           height: 50px !important;
         }
-        .lucide-whatsapp {
+        .lucide-message-circle {
           width: 28px !important;
           height: 28px !important;
         }
@@ -47,3 +47,4 @@ const FloatingWhatsappButton = () => (
 );
 
 export default FloatingWhatsappButton;
+
