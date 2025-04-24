@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -26,7 +25,6 @@ const INTERESSES = [
 const defaultMensagem =
   "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
 
-// Imagem corrigida pelo utilizador
 const contactImg = "/lovable-uploads/eecc81b9-24e3-4934-8b13-b52dd184d679.png";
 
 const ContactSection = () => {
@@ -118,7 +116,16 @@ const ContactSection = () => {
           </div>
           <div className="w-full md:w-7/12 flex items-center">
             <div className="p-6 md:p-10 w-full">
-              {!submitted ? (
+              {submitted ? (
+                <div className="text-center py-8">
+                  <h3 className="text-business-700 font-bold text-2xl font-montserrat mb-3">
+                    Parabéns por dar o primeiro passo para crescer a sua Empresa
+                  </h3>
+                  <p className="text-gray-700">
+                    Entraremos em contacto consigo em breve.
+                  </p>
+                </div>
+              ) : (
                 <form
                   className="space-y-6 md:space-y-7"
                   onSubmit={handleSubmit}
@@ -255,21 +262,11 @@ const ContactSection = () => {
                     </ModernContactButton>
                   </div>
                 </form>
-              ) : (
-                <div className="text-center py-8">
-                  <h3 className="text-business-700 font-bold text-2xl font-montserrat mb-3">
-                    Obrigado pelo seu interesse!
-                  </h3>
-                  <p className="text-gray-700">
-                    Entraremos em contacto consigo em breve.
-                  </p>
-                </div>
               )}
             </div>
           </div>
         </div>
       </div>
-      {/* Garantir Norwester carregada para headings */}
       <style>{`
         @font-face {
           font-family: 'Norwester';
@@ -282,4 +279,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
