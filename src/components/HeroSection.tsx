@@ -36,17 +36,14 @@ const HeroSection = () => {
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
               Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
             </p>
-            <div className="flex flex-col space-y-4">
-              <p className="text-lg font-semibold text-business-700">Quer aproveitar os fundos certos para crescer?</p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="#contact"
-                  className="bg-business-200 hover:bg-business-300 text-gray-900 text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  Peça uma análise gratuita
-                </a>
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="bg-business-200 hover:bg-business-300 text-gray-900 text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                Peça uma análise gratuita
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
@@ -57,7 +54,7 @@ const HeroSection = () => {
                   key={card.title}
                   className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start"
                 >
-                  <Icon className="text-business-600 mb-4" size={32} aria-hidden="true" />
+                  <Icon className="text-business-600 mb-4" size={32} />
                   <h3 className="font-bold text-xl mb-2 font-montserrat">{card.title}</h3>
                   <p className="text-gray-600">{card.description}</p>
                 </div>

@@ -7,28 +7,24 @@ const services = [
     title: "Fundos Europeus (Portugal 2030, PRR)",
     description:
       "Acompanhamento completo na candidatura, gestão e execução de incentivos europeus. Aproveita o apoio certo no momento certo — sem complicações.",
-    alt: "Consultor de fundos europeus Portugal 2030 e PRR"
   },
   {
     icon: ChartBar,
     title: "Estratégia e Valorização Empresarial",
     description:
       "Avaliação do desempenho da tua empresa e definição de estratégias de crescimento. Aumenta o valor do teu negócio com uma visão clara e planos bem definidos.",
-    alt: "Consultoria estratégica para PME em Portugal"
   },
   {
     icon: CalendarDays,
     title: "Digitalização e Eficiência Operacional",
     description:
       "Transforma os teus processos com tecnologia, automação e boas práticas. Menos desperdício, mais produtividade e melhor controlo.",
-    alt: "Digitalização empresarial para PME portuguesas"
   },
   {
     icon: Rocket,
     title: "Gestão de Projetos e Crescimento",
     description:
       "Do planeamento à implementação, garantimos o acompanhamento estratégico de iniciativas que impulsionam o teu negócio.",
-    alt: "Gestão de projetos e crescimento para empresas em Portugal"
   },
 ];
 
@@ -46,7 +42,7 @@ const ServicesSection = () => {
             const Icon = service.icon;
             return (
               <div key={idx} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col items-center">
-                <span className="mb-4" aria-hidden="true">
+                <span className="mb-4">
                   <Icon className="text-business-600" size={38} />
                 </span>
                 <h3 className="text-xl font-bold mb-3 font-montserrat">{service.title}</h3>
