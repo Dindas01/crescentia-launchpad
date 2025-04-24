@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/9f74081c-f4f2-4a8d-83a8-c78784baa724.png" 
+              src="/lovable-uploads/65dcde66-bac8-477b-b9f9-f5fc973e7960.png" 
               alt="Crescentia Consultoria Logo" 
               className="h-12 w-auto" 
             />
