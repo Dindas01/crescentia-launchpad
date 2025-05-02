@@ -25,6 +25,10 @@ const ModernContactButton: React.FC<ModernContactButtonProps> = ({
     style={{
       letterSpacing: "0.01em",
       fontFamily: "'Montserrat', Norwester, sans-serif",
+      overflow: "hidden", // Ensure text doesn't overflow
+      display: "inline-flex",  // Improve alignment
+      alignItems: "center",   // Center vertically
+      justifyContent: "center" // Center horizontally
     }}
     {...props}
   >

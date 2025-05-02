@@ -1,8 +1,8 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import CallToActionButton from "./CallToActionButton";
 import ModernContactButton from "./ModernContactButton";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
@@ -39,6 +39,9 @@ const ContactSection = () => {
     mensagem: "",
   });
 
+  const [errors, setErrors] = useState({
+    email: "",
+  });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -48,6 +51,12 @@ const ContactSection = () => {
     >
   ) => {
     const { name, value } = e.target;
+    
+    // Clear any error when user starts typing again
+    if (name === "email") {
+      setErrors(prev => ({ ...prev, email: "" }));
+    }
+    
     setForm((prev) => ({
       ...prev,
       [name]: value,
@@ -63,6 +72,20 @@ const ContactSection = () => {
     }));
   };
 
+  const validateEmail = (email: string): boolean => {
+    // Simple regex for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailRegex.test(email);
+    
+    if (!isValid) {
+      setErrors(prev => ({ ...prev, email: "Por favor insira um email válido" }));
+    } else {
+      setErrors(prev => ({ ...prev, email: "" }));
+    }
+    
+    return isValid;
+  };
+
   const trackPlausibleEvent = () => {
     if (
       typeof window !== "undefined" &&
@@ -74,6 +97,12 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate email before proceeding
+    if (!validateEmail(form.email)) {
+      return;
+    }
+    
     setLoading(true);
     trackPlausibleEvent();
     
@@ -97,25 +126,6 @@ const ContactSection = () => {
       }
 
       console.log("Formulário processado com sucesso:", result);
-      
-      // Chamar diretamente a função de envio de email para garantir que ele seja enviado
-      try {
-        const emailResponse = await fetch(
-          "https://jouidoxxiflwykkifnew.supabase.co/functions/v1/send-auto-reply",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-          }
-        );
-        
-        const emailResult = await emailResponse.json();
-        console.log("Resultado do envio de email:", emailResult);
-      } catch (emailError) {
-        console.error("Erro ao enviar email de confirmação:", emailError);
-      }
       
       setSubmitted(true);
       toast({
@@ -235,12 +245,15 @@ const ContactSection = () => {
                       inputMode="email"
                       autoCapitalize="off"
                       autoCorrect="off"
-                      className="font-montserrat h-11"
+                      className={`font-montserrat h-11 ${errors.email ? "border-red-500" : ""}`}
                       value={form.email}
                       onChange={handleChange}
                       placeholder="joao@minhaempresa.pt"
                       required
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    )}
                   </div>
                   <div>
                     <label
