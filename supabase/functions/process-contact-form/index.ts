@@ -66,6 +66,80 @@ serve(async (req) => {
 
     console.log("Dados inseridos com sucesso no Supabase:", leadData);
 
+    // Enviar email de notificação para o administrador
+    const interessesText = interesses && interesses.length > 0
+      ? interesses.join(", ")
+      : "Não especificados";
+
+    const adminEmailHtml = `
+    <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          h2 { color: #2a6444; margin-bottom: 20px; }
+          .info-item { margin-bottom: 15px; }
+          .info-label { font-weight: bold; color: #2a6444; }
+          .footer { margin-top: 30px; font-size: 14px; color: #555; border-top: 1px solid #eee; padding-top: 20px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h2>Nova Solicitação de Análise Gratuita 🚀</h2>
+          
+          <p>Uma pessoa acaba de solicitar uma análise gratuita no website Crescentia:</p>
+          
+          <div class="info-item">
+            <span class="info-label">👤 Nome:</span> ${nome}
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">📧 Email:</span> ${email}
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">🏢 Empresa:</span> ${empresa || "Não informada"}
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">🗂️ Área de atividade:</span> ${area || "Não informada"}
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">✅ Interesses:</span> ${interessesText}
+          </div>
+          
+          <div class="info-item">
+            <span class="info-label">💬 Mensagem:</span> ${mensagem || "Nenhuma mensagem fornecida"}
+          </div>
+          
+          <div class="footer">
+            <p>Este email foi enviado automaticamente pelo sistema da Crescentia Consultoria.</p>
+          </div>
+        </div>
+      </body>
+    </html>
+    `;
+
+    try {
+      const { data: adminEmailData, error: adminEmailError } = await resend.emails.send({
+        from: "Crescentia Website <noreply@crescentia.pt>",
+        to: ["info@crescentia.pt"],
+        subject: "Nova Solicitação de Análise Gratuita - Crescentia",
+        html: adminEmailHtml,
+        reply_to: email
+      });
+
+      if (adminEmailError) {
+        console.error("Erro ao enviar email para administrador:", adminEmailError);
+      } else {
+        console.log("Email de notificação enviado ao administrador com sucesso:", adminEmailData);
+      }
+    } catch (emailError) {
+      console.error("Erro ao enviar email para administrador:", emailError);
+      // Não retornamos erro aqui porque a principal funcionalidade (salvar os dados) já foi concluída
+    }
+
     return new Response(
       JSON.stringify({ success: true, message: "Dados processados com sucesso" }),
       {
