@@ -1,9 +1,12 @@
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import CallToActionButton from "./CallToActionButton";
 import ModernContactButton from "./ModernContactButton";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/use-toast";
 
 const AREAS = [
   "Indústria",
@@ -38,6 +41,7 @@ const ContactSection = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -69,10 +73,48 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     trackPlausibleEvent();
-    setSubmitted(true);
+    
+    try {
+      // Enviar dados para a edge function
+      const response = await fetch(
+        "https://jouidoxxiflwykkifnew.supabase.co/functions/v1/process-contact-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Erro ao processar o formulário");
+      }
+
+      console.log("Formulário processado com sucesso:", result);
+      setSubmitted(true);
+      toast({
+        title: "Formulário enviado com sucesso!",
+        description: "Entraremos em contacto consigo em breve.",
+        duration: 5000,
+      });
+    } catch (error) {
+      console.error("Erro ao submeter formulário:", error);
+      toast({
+        title: "Erro ao enviar formulário",
+        description: "Por favor, tente novamente mais tarde.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -257,8 +299,8 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <ModernContactButton>
-                      Peça uma análise gratuita
+                    <ModernContactButton disabled={loading}>
+                      {loading ? "A processar..." : "Peça uma análise gratuita"}
                     </ModernContactButton>
                   </div>
                 </form>

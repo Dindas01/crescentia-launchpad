@@ -11,16 +11,34 @@ export type Database = {
     Tables: {
       "Leads Website": {
         Row: {
+          area: string | null
           created_at: string
+          email: string
+          empresa: string | null
           id: number
+          interesses: string[] | null
+          mensagem: string | null
+          nome: string
         }
         Insert: {
+          area?: string | null
           created_at?: string
+          email: string
+          empresa?: string | null
           id?: number
+          interesses?: string[] | null
+          mensagem?: string | null
+          nome: string
         }
         Update: {
+          area?: string | null
           created_at?: string
+          email?: string
+          empresa?: string | null
           id?: number
+          interesses?: string[] | null
+          mensagem?: string | null
+          nome?: string
         }
         Relationships: []
       }
