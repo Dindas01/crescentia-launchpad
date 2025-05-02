@@ -32,11 +32,21 @@ export function CookieConsentPopup() {
     localStorage.setItem("cookie-consent", "accepted");
     initializeGoogleAnalytics();
     setOpen(false);
+    
+    // Send a specific event to track consent acceptance
+    if (window.gtag) {
+      window.gtag('event', 'cookie_consent_accepted', {
+        'event_category': 'engagement',
+        'event_label': 'Cookie Consent'
+      });
+      console.log("Evento de consentimento enviado para Google Analytics");
+    }
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookie-consent", "declined");
     setOpen(false);
+    console.log("Consentimento de cookies recusado");
   };
 
   const initializeGoogleAnalytics = () => {
@@ -56,12 +66,36 @@ export function CookieConsentPopup() {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-6XGWBVK4D3');
+      gtag('config', 'G-6XGWBVK4D3', {
+        send_page_view: true,
+        cookie_flags: 'samesite=none;secure',
+        anonymize_ip: true
+      });
     `;
     
     // Append scripts to document
     document.head.appendChild(gtagScript);
     document.head.appendChild(inlineScript);
+    
+    // Listen for script load to verify initialization
+    gtagScript.onload = () => {
+      console.log("Google Analytics carregado com sucesso");
+      
+      // Send a test event after a short delay to ensure everything is initialized
+      setTimeout(() => {
+        if (window.gtag) {
+          window.gtag('event', 'ga_initialized', {
+            'event_category': 'system',
+            'event_label': 'GA Initialization'
+          });
+          console.log("Evento de teste enviado para Google Analytics");
+        }
+      }, 1000);
+    };
+    
+    gtagScript.onerror = () => {
+      console.error("Erro ao carregar Google Analytics");
+    };
     
     console.log("Google Analytics inicializado após consentimento");
   };
