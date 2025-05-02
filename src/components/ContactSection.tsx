@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -98,6 +97,26 @@ const ContactSection = () => {
       }
 
       console.log("Formulário processado com sucesso:", result);
+      
+      // Chamar diretamente a função de envio de email para garantir que ele seja enviado
+      try {
+        const emailResponse = await fetch(
+          "https://jouidoxxiflwykkifnew.supabase.co/functions/v1/send-auto-reply",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+          }
+        );
+        
+        const emailResult = await emailResponse.json();
+        console.log("Resultado do envio de email:", emailResult);
+      } catch (emailError) {
+        console.error("Erro ao enviar email de confirmação:", emailError);
+      }
+      
       setSubmitted(true);
       toast({
         title: "Formulário enviado com sucesso!",
