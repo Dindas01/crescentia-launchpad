@@ -78,7 +78,7 @@ const Footer = () => {
                   className="text-gray-300 hover:text-business-300 transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={22} />
+                  <Linkedin size={26} />
                 </a>
                 <a 
                   href="https://www.instagram.com/crescentia.pt?igsh=NzBueGV6MmQ0OHA2&utm_source=qr" 
@@ -87,7 +87,7 @@ const Footer = () => {
                   className="text-gray-300 hover:text-business-300 transition-colors"
                   aria-label="Instagram"
                 >
-                  <Instagram size={22} />
+                  <Instagram size={26} />
                 </a>
               </div>
             </div>
