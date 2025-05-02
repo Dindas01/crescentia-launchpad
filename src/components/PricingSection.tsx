@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Check, Sparkles, BarChart3, Clock } from "lucide-react";
+import { Check, Sparkles, BarChart3, Clock, Star } from "lucide-react";
 import CallToActionButton from "./CallToActionButton";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -30,9 +30,9 @@ const plans = [
     highlighted: true,
   },
   {
-    icon: Clock,
+    icon: Star,
     title: "Plano Premium Crescentia",
-    price: "3000€ – 4500€",
+    price: "Sobre Consulta",
     bonus: "4% do total financiado",
     features: [
       "6-12 meses de definição e acompanhamento de KPI's",
@@ -109,3 +109,4 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
+
