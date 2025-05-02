@@ -3,6 +3,7 @@ import React from "react";
 import { Check, Sparkles, BarChart3, Clock } from "lucide-react";
 import CallToActionButton from "./CallToActionButton";
 import { Card, CardContent, CardHeader } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 const plans = [
   {
@@ -26,6 +27,7 @@ const plans = [
       "Apoio técnico",
       "3 meses de apoio pós-aprovação",
     ],
+    highlighted: true,
   },
   {
     icon: Clock,
@@ -54,24 +56,34 @@ const PricingSection = () => {
           {plans.map((plan, idx) => {
             const Icon = plan.icon;
             return (
-              <Card key={idx} className="overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader className="p-6 text-center">
+              <Card 
+                key={idx} 
+                className={`overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
+                  plan.highlighted ? 'border-2 border-business-400 bg-business-50' : 'border border-gray-100'
+                }`}
+              >
+                <CardHeader className="p-6 text-center relative">
                   <span className="mb-4 inline-flex items-center justify-center">
                     <Icon className="text-business-600" size={38} />
                   </span>
-                  <h3 className="text-xl font-bold mb-3 font-montserrat">{plan.title}</h3>
+                  {plan.highlighted && (
+                    <Badge className="absolute top-2 right-2 bg-business-200 text-business-800 hover:bg-business-300">
+                      Mais completo
+                    </Badge>
+                  )}
+                  <h3 className="text-xl font-bold mb-2 font-montserrat">{plan.title}</h3>
                 </CardHeader>
                 <CardContent className="p-6 flex flex-col h-full">
-                  <div className="mb-4 text-center">
+                  <div className="mb-5 text-center">
                     <p className="text-2xl font-bold text-business-700">{plan.price}</p>
                     <p className="text-gray-600 text-sm">Preço fixo</p>
-                    <p className="mt-2 text-lg font-semibold text-business-600">{plan.bonus}</p>
+                    <p className="mt-3 text-lg font-semibold text-business-600">{plan.bonus}</p>
                     <p className="text-gray-600 text-sm">Bónus de sucesso</p>
                   </div>
                   
-                  <div className="mt-4 mb-6 flex-grow">
-                    <p className="font-semibold mb-2">Inclui:</p>
-                    <ul className="space-y-2">
+                  <div className="mt-5 mb-6 flex-grow">
+                    <p className="font-semibold mb-3">Inclui:</p>
+                    <ul className="space-y-3">
                       {plan.features.map((feature, fidx) => (
                         <li key={fidx} className="flex items-start">
                           <Check className="mr-2 h-5 w-5 text-business-600 mt-0.5 flex-shrink-0" />
@@ -81,7 +93,7 @@ const PricingSection = () => {
                     </ul>
                   </div>
                   
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto pt-5">
                     <CallToActionButton className="w-full">
                       Peça este plano
                     </CallToActionButton>
