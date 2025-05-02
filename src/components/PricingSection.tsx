@@ -49,7 +49,7 @@ const PricingSection = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-2 text-gray-900 mb-4 font-montserrat">
-            Planos
+            Pricing
           </h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

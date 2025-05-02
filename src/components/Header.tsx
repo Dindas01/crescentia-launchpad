@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import CallToActionButton from "./CallToActionButton";
@@ -20,6 +21,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 font-montserrat">
           <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
+          <a href="#pricing" className="text-business-800 hover:text-business-600 font-medium transition-colors">Pricing</a>
           <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Sobre Nós</a>
           <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
           <CallToActionButton
@@ -43,6 +45,9 @@ const Header = () => {
           <div className="container-custom py-4 flex flex-col space-y-4 font-montserrat">
             <a href="#services" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Serviços
+            </a>
+            <a href="#pricing" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Pricing
             </a>
             <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Sobre Nós
