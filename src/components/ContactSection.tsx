@@ -104,6 +104,17 @@ const ContactSection = () => {
         description: "Entraremos em contacto consigo em breve.",
         duration: 5000,
       });
+      
+      // Limpar o formulário após submissão bem-sucedida
+      setForm({
+        nome: "",
+        email: "",
+        empresa: "",
+        area: "",
+        interesses: [],
+        mensagem: "",
+      });
+      
     } catch (error) {
       console.error("Erro ao submeter formulário:", error);
       toast({

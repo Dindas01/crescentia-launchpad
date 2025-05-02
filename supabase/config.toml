@@ -28,3 +28,9 @@ site_url = "http://localhost:3000"
 enabled = true
 port = 54324
 vector_port = 54325
+
+[functions.process-contact-form]
+verify_jwt = false
+
+[functions.send-auto-reply]
+verify_jwt = false
