@@ -1,4 +1,6 @@
 
+import { Instagram, Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-[#1A1F2C] text-gray-100 pt-14 pb-7 font-montserrat">
@@ -64,6 +66,31 @@ const Footer = () => {
               </li>
               <li>Porto, Portugal</li>
             </ul>
+            
+            {/* Social Media Icons */}
+            <div className="mt-4">
+              <h4 className="text-sm font-semibold mb-2">Siga-nos</h4>
+              <div className="flex space-x-4">
+                <a 
+                  href="https://www.linkedin.com/company/crescentiapt/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-business-300 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={22} />
+                </a>
+                <a 
+                  href="https://www.instagram.com/crescentia.pt?igsh=NzBueGV6MmQ0OHA2&utm_source=qr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-business-300 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={22} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
