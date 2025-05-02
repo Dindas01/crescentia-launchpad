@@ -1,7 +1,7 @@
 
 import { MessageCircle } from "lucide-react";
 
-const whatsappUrl = "https://wa.me/351912345678";
+const whatsappUrl = "https://wa.me/351913960220";
 
 const FloatingWhatsappButton = () => (
   <a
@@ -47,4 +47,3 @@ const FloatingWhatsappButton = () => (
 );
 
 export default FloatingWhatsappButton;
-

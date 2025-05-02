@@ -59,11 +59,11 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300 text-base font-montserrat">
               <li>
                 <span className="font-semibold text-gray-100">Email:</span>{" "}
-                <a href="mailto:geral@crescentia.pt" className="hover:text-business-300 transition-colors">geral@crescentia.pt</a>
+                <a href="mailto:info@crescentia.pt" className="hover:text-business-300 transition-colors">info@crescentia.pt</a>
               </li>
               <li>
                 <span className="font-semibold text-gray-100">Telefone:</span>{" "}
-                <a href="tel:+351913960220" className="hover:text-business-300 transition-colors">+351 913960220</a>
+                <a href="tel:+351913960220" className="hover:text-business-300 transition-colors">+351 913 960 220</a>
               </li>
               <li>Porto, Portugal</li>
             </ul>

@@ -78,7 +78,7 @@ serve(async (req) => {
       to: [email],
       subject: "Obrigado pelo seu pedido de análise gratuita 🚀",
       html: emailHtml,
-      reply_to: "geral@crescentia.pt"
+      reply_to: "info@crescentia.pt"
     });
 
     if (error) {
