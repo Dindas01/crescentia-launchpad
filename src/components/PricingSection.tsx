@@ -11,35 +11,47 @@ const plans = [
     title: "Plano Essencial Crescentia",
     price: "500€ – 750€",
     bonus: "7% do total financiado",
+    description: "Ideal para empresas que estão a iniciar o processo de captação de fundos. É a forma mais rápida e acessível de submeter uma candidatura com apoio especializado.",
+    timeline: "Prazo médio: 2 a 4 semanas",
     features: [
-      "Mapa de oportunidades",
-      "Elaboração completa da candidatura",
+      "Mapa de oportunidades personalizado",
+      "Elaboração e submissão da candidatura",
     ],
+    ctaText: "Pedir este plano",
+    microtext: "Vagas limitadas mensalmente"
   },
   {
     icon: BarChart3,
     title: "Plano Avançado Crescentia",
     price: "1200€ – 2000€",
     bonus: "5% do total financiado",
+    description: "Pensado para PME que precisam de um plano sólido e acompanhamento técnico para garantir uma candidatura forte.",
+    timeline: "Prazo médio: 4 a 6 semanas",
     features: [
-      "Candidatura completa",
-      "Plano de negócio",
-      "Apoio técnico",
-      "3 meses de apoio pós-aprovação",
+      "Tudo do Plano Essencial",
+      "Elaboração de plano de negócio",
+      "Apoio técnico durante o processo",
+      "3 meses de apoio após a aprovação",
     ],
     highlighted: true,
+    ctaText: "Pedir este plano",
+    microtext: "Recomendado para empresas em crescimento ativo"
   },
   {
     icon: Star,
     title: "Plano Premium Crescentia",
     price: "Sobre Consulta",
     bonus: "4% do total financiado",
+    description: "Para empresas que querem apoio completo e acompanhamento contínuo para maximizar resultados a longo prazo.",
+    timeline: "Prazo: definido caso a caso",
     features: [
-      "6-12 meses de definição e acompanhamento de KPI's",
+      "Tudo do Plano Avançado",
+      "6 a 12 meses de definição e acompanhamento de KPI's",
+      "Reuniões de follow-up estratégicas",
       "Relatórios de execução",
-      "Reuniões de follow-up",
-      "Monitorização contínua",
     ],
+    ctaText: "Pedir este plano",
+    microtext: "Programa personalizado com vagas limitadas"
   },
 ];
 
@@ -81,7 +93,12 @@ const PricingSection = () => {
                     <p className="text-gray-600 text-sm">Bónus de sucesso</p>
                   </div>
                   
-                  <div className="mt-5 mb-6 flex-grow">
+                  <div className="mt-3 mb-4">
+                    <p className="text-gray-700 text-center">{plan.description}</p>
+                    <p className="text-gray-600 text-sm text-center mt-2 font-semibold">{plan.timeline}</p>
+                  </div>
+                  
+                  <div className="mt-4 mb-6 flex-grow">
                     <p className="font-semibold mb-3">Inclui:</p>
                     <ul className="space-y-3">
                       {plan.features.map((feature, fidx) => (
@@ -93,10 +110,11 @@ const PricingSection = () => {
                     </ul>
                   </div>
                   
-                  <div className="mt-auto pt-5">
-                    <CallToActionButton href="#contact" className="w-full">
-                      Peça este plano
+                  <div className="mt-auto pt-5 flex flex-col items-center">
+                    <CallToActionButton href="#contact" className="w-full mb-2">
+                      {plan.ctaText}
                     </CallToActionButton>
+                    <p className="text-gray-500 text-xs italic">{plan.microtext}</p>
                   </div>
                 </CardContent>
               </Card>
