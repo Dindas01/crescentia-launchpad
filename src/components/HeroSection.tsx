@@ -1,5 +1,6 @@
 
 import { Euro, CalendarDays, ChartBar, Rocket } from "lucide-react";
+import CallToActionButton from "./CallToActionButton";
 
 const infoCards = [
   {
@@ -38,14 +39,14 @@ const HeroSection = () => {
               <br /><br />
               Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a
+            <div className="flex flex-wrap gap-4 mt-10">
+              <CallToActionButton
                 href="#contact"
-                className="bg-business-600 hover:bg-business-700 text-white text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
-                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
+                size="large"
               >
                 Peça uma análise gratuita
-              </a>
+              </CallToActionButton>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
@@ -54,7 +55,7 @@ const HeroSection = () => {
               return (
                 <div
                   key={card.title}
-                  className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start"
+                  className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start h-full"
                 >
                   <Icon className="text-business-600 mb-4" size={32} />
                   <h3 className="font-bold text-xl mb-2 font-montserrat">{card.title}</h3>

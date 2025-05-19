@@ -13,7 +13,7 @@ const ModernContactButton: React.FC<ModernContactButtonProps> = ({
     aria-label="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
     className={`
       relative inline-flex items-center justify-center font-montserrat 
-      font-bold text-lg rounded-2xl px-8 py-3 w-full md:w-auto
+      font-bold text-lg rounded-2xl px-8 py-3.5 w-full md:w-auto
       bg-gradient-to-r from-business-200 via-business-400 to-business-600
       text-business-900 shadow-lg transition-all duration-300
       border-2 border-business-300
@@ -25,10 +25,10 @@ const ModernContactButton: React.FC<ModernContactButtonProps> = ({
     style={{
       letterSpacing: "0.01em",
       fontFamily: "'Montserrat', Norwester, sans-serif",
-      overflow: "hidden", // Ensure text doesn't overflow
-      display: "inline-flex",  // Improve alignment
-      alignItems: "center",   // Center vertically
-      justifyContent: "center" // Center horizontally
+      overflow: "hidden",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center"
     }}
     {...props}
   >

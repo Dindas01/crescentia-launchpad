@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,6 +125,26 @@
   .heading-3 {
     @apply text-2xl md:text-3xl font-bold;
   }
+
+  /* Nova classe para CTAs destacados */
+  .cta-highlight {
+    @apply my-8 md:my-12 px-6 py-10 bg-gray-50/50 rounded-xl border border-business-100 shadow-sm;
+  }
+  
+  /* Espaçamento aprimorado para CTAs */
+  .cta-spacing {
+    @apply mt-8 mb-12 md:mt-10 md:mb-16;
+  }
+  
+  /* Estilos melhorados para cards de serviços */
+  .service-card {
+    @apply bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col items-center h-full;
+  }
+  
+  /* Estilos para valores da empresa */
+  .value-card {
+    @apply bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start h-full;
+  }
 }
 
 @keyframes fadeInUp {
@@ -151,4 +172,9 @@
 
 .animate-delay-300 {
   animation-delay: 300ms;
+}
+
+/* Melhorias para botões CTA */
+.cta-button {
+  @apply bg-business-600 hover:bg-business-700 text-white text-base font-semibold py-3.5 px-8 rounded-lg font-montserrat transition-all duration-300 shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-business-500 focus:ring-opacity-50 whitespace-normal;
 }

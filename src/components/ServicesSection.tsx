@@ -1,5 +1,6 @@
 
-import { Euro, ChartBar, Rocket, CalendarDays } from "lucide-react";
+import { Euro, ChartBar, Rocket, CalendarDays, Target, PieChart, Building, ArrowUpRight } from "lucide-react";
+import CallToActionButton from "./CallToActionButton";
 
 const services = [
   {
@@ -36,27 +37,48 @@ const ServicesSection = () => {
           <h2 className="heading-2 text-gray-900 mb-4 font-montserrat">
             Serviços
           </h2>
+          <p className="text-lg text-gray-600">
+            Soluções especializadas para pequenas e médias empresas que buscam crescimento sustentável e financiamento inteligente.
+          </p>
         </div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
-              <div key={idx} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center flex flex-col items-center">
-                <span className="mb-4">
+              <div key={idx} className="service-card group">
+                <div className="mb-6 p-3 bg-business-50 rounded-full inline-flex items-center justify-center">
                   <Icon className="text-business-600" size={38} />
-                </span>
-                <h3 className="text-xl font-bold mb-3 font-montserrat">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                </div>
+                <h3 className="text-xl font-bold mb-4 font-montserrat group-hover:text-business-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <div className="mt-auto pt-2">
+                  <a 
+                    href="#contact" 
+                    className="inline-flex items-center text-business-600 font-medium hover:text-business-700 transition-colors"
+                  >
+                    Saber mais <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
               </div>
             );
           })}
         </div>
         
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold mb-4 font-montserrat">Quer saber se a sua empresa é elegível para apoio europeu?</h3>
-          <a href="#contact" className="inline-block bg-business-600 hover:bg-business-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md mt-4">
+        <div className="cta-highlight text-center mt-20">
+          <h3 className="text-2xl font-bold mb-4 font-montserrat text-business-800">Quer saber se a sua empresa é elegível para apoio europeu?</h3>
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Descubra as oportunidades disponíveis para o seu negócio com uma análise personalizada e sem compromisso.
+          </p>
+          <CallToActionButton
+            href="#contact"
+            ariaLabel="Solicitar análise gratuita de oportunidades de financiamento"
+            className="mx-auto"
+          >
             Peça uma análise gratuita
-          </a>
+          </CallToActionButton>
         </div>
       </div>
     </section>
