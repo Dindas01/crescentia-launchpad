@@ -94,7 +94,7 @@ const PricingSection = () => {
                   </div>
                   
                   <div className="mt-auto pt-5">
-                    <CallToActionButton className="w-full">
+                    <CallToActionButton href="#contact" className="w-full">
                       Peça este plano
                     </CallToActionButton>
                   </div>
@@ -103,10 +103,16 @@ const PricingSection = () => {
             );
           })}
         </div>
+        
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold mb-4 font-montserrat">Quer saber se a sua empresa é elegível para apoio europeu?</h3>
+          <CallToActionButton href="#contact" className="inline-block mt-4">
+            Peça uma análise gratuita
+          </CallToActionButton>
+        </div>
       </div>
     </section>
   );
 };
 
 export default PricingSection;
-

@@ -62,10 +62,10 @@ export default {
 					100: '#e0f2e0',
 					200: '#c0e5c0',
 					300: '#a0d890',
-					400: '#A2D48A',
+					400: '#A2D48A', // Verde claro da marca
 					500: '#82c86a',
-					600: '#62bc4a',
-					700: '#42b02a',
+					600: '#1B5E57', // Verde escuro da marca
+					700: '#0E3E4A', // Azul petróleo da marca
 					800: '#2a9419',
 					900: '#1a7d09',
 				},
@@ -111,4 +111,3 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-

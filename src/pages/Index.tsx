@@ -12,7 +12,16 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO />
+      <SEO 
+        keywords={[
+          "fundos europeus para PME", 
+          "apoios Portugal 2030", 
+          "consultoria empresarial PRR", 
+          "análise gratuita de candidatura",
+          "financiamento europeu PME",
+          "crescer negócio Portugal"
+        ]}
+      />
       <SchemaMarkup />
       <Header />
       <main className="flex-grow">

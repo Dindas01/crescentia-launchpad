@@ -51,6 +51,13 @@ const ServicesSection = () => {
             );
           })}
         </div>
+        
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold mb-4 font-montserrat">Quer saber se a sua empresa é elegível para apoio europeu?</h3>
+          <a href="#contact" className="inline-block bg-business-600 hover:bg-business-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md mt-4">
+            Peça uma análise gratuita
+          </a>
+        </div>
       </div>
     </section>
   );

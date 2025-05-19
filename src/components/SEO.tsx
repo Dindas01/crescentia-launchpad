@@ -8,6 +8,7 @@ interface SEOProps {
   canonical?: string;
   image?: string;
   type?: string;
+  keywords?: string[];
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -16,6 +17,7 @@ const SEO: React.FC<SEOProps> = ({
   canonical = "https://crescentia.pt/",
   image = "/lovable-uploads/484bd9fa-9746-4785-a7b3-649232b78d95.png",
   type = "website",
+  keywords = ["fundos europeus para PME", "apoios Portugal 2030", "consultoria empresarial PRR", "análise gratuita de candidatura"]
 }) => {
   const siteUrl = "https://crescentia.pt";
   const fullCanonicalUrl = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
@@ -27,6 +29,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={fullCanonicalUrl} />
+      <meta name="keywords" content={keywords.join(", ")} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:title" content={title} />

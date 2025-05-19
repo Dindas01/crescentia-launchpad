@@ -34,12 +34,14 @@ const HeroSection = () => {
               Faz crescer o teu negócio com estratégia e financiamento inteligente.
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+              <strong>Apoio especializado para aceder a fundos europeus e impulsionar o crescimento da sua PME.</strong>
+              <br /><br />
               Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="bg-business-200 hover:bg-business-300 text-gray-900 text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
+                className="bg-business-600 hover:bg-business-700 text-white text-base font-semibold py-3 px-8 rounded-lg font-montserrat transition-colors duration-200 shadow-md"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Peça uma análise gratuita
