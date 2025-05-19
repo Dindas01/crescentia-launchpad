@@ -166,14 +166,41 @@ const ContactSection = () => {
           </div>
           <div className="w-full md:w-7/12 flex items-center">
             <div className="p-6 md:p-10 w-full">
-              {submitted ? <div className="text-center py-8">
-                  <h3 className="text-business-700 font-bold text-2xl font-montserrat mb-3">
-                    Parabéns por dar o primeiro passo para crescer a sua Empresa
+              {submitted ? 
+                <div className="text-center py-6 md:py-8 px-4">
+                  <div className="w-20 h-20 rounded-full bg-business-100 flex items-center justify-center mx-auto mb-6">
+                    <span className="text-3xl">🎉</span>
+                  </div>
+                  <h3 className="text-business-600 font-bold text-2xl font-norwester mb-4" style={{
+                    fontFamily: "Norwester, Montserrat, sans-serif"
+                  }}>
+                    Pedido recebido com sucesso!
                   </h3>
-                  <p className="text-gray-700">
-                    Entraremos em contacto consigo em breve.
+                  <p className="text-business-700 font-semibold text-lg mb-4">
+                    Obrigado por confiar na Crescentia.
                   </p>
-                </div> : <form className="space-y-6 md:space-y-7" onSubmit={handleSubmit} autoComplete="off">
+                  <div className="space-y-4 mb-6 text-gray-700">
+                    <p>
+                      A sua análise gratuita está agora em preparação.<br />
+                      Entraremos em contacto brevemente para compreender melhor a sua empresa e apresentar as oportunidades de financiamento mais adequadas.
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-6 border-t border-business-100">
+                    <p className="text-gray-700 mb-3">
+                      Se quiser adiantar algum detalhe, pode escrever-nos para:
+                    </p>
+                    <div className="flex flex-col space-y-2 items-center justify-center">
+                      <a href="mailto:info@crescentia.pt" className="flex items-center text-business-600 hover:text-business-700 transition-colors font-medium">
+                        <span className="mr-2">📧</span> info@crescentia.pt
+                      </a>
+                      <a href="tel:+351913960220" className="flex items-center text-business-600 hover:text-business-700 transition-colors font-medium">
+                        <span className="mr-2">📞</span> 913 960 220
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                : 
+                <form className="space-y-6 md:space-y-7" onSubmit={handleSubmit} autoComplete="off">
                   <div>
                     <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
                       Nome<span className="text-red-500">*</span>
