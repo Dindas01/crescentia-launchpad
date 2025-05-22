@@ -1,6 +1,7 @@
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import PromotionalBanner from "@/components/PromotionalBanner";
 import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import WhyUsSection from "@/components/WhyUsSection";
@@ -25,6 +26,7 @@ const Index = () => {
       <SchemaMarkup />
       <Header />
       <main className="flex-grow">
+        <PromotionalBanner />
         <HeroSection />
         <ServicesSection />
         <PricingSection />
