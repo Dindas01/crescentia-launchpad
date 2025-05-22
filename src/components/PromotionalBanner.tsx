@@ -38,7 +38,7 @@ const PromotionalBanner = () => {
           </div>
           
           <p className="text-business-700 font-semibold mb-6">
-            📌 Vagas limitadas. Oferta válida para as 3 primeiras empresas que solicitem a análise gratuita.
+            Vagas limitadas. Oferta válida para as 3 primeiras empresas que solicitem a análise gratuita.
           </p>
           
           <div className="mt-6">
