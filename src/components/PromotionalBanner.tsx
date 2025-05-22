@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Check } from "lucide-react";
+import { Check, Target } from "lucide-react";
 import CallToActionButton from "./CallToActionButton";
 
 const PromotionalBanner = () => {
@@ -9,7 +9,7 @@ const PromotionalBanner = () => {
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-4">
-            <span className="text-3xl">🎁</span>
+            <Target className="text-business-600 w-12 h-12" strokeWidth={2} />
           </div>
           
           <h2 className="text-business-700 text-2xl md:text-3xl font-bold mb-4 font-norwester" style={{
@@ -38,7 +38,7 @@ const PromotionalBanner = () => {
           </div>
           
           <p className="text-business-700 font-semibold mb-6">
-            📌 Vagas limitadas. Só para os 3 primeiros projetos aprovados.
+            📌 Vagas limitadas. Oferta válida para as 3 primeiras empresas que solicitem a análise gratuita.
           </p>
           
           <div className="mt-6">
