@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
@@ -15,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Mail, Building, Calendar, MessageSquare, Filter } from "lucide-react";
+import PasswordProtection from "@/components/PasswordProtection";
 
 interface Lead {
   id: number;
@@ -32,10 +32,24 @@ const LeadsManagement = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterArea, setFilterArea] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    fetchLeads();
+    // Check if user is already authenticated
+    const isAuth = sessionStorage.getItem("leads_authenticated") === "true";
+    setIsAuthenticated(isAuth);
+    
+    if (isAuth) {
+      fetchLeads();
+    } else {
+      setLoading(false);
+    }
   }, []);
+
+  const handleAuthenticated = () => {
+    setIsAuthenticated(true);
+    fetchLeads();
+  };
 
   const fetchLeads = async () => {
     try {
@@ -95,6 +109,10 @@ const LeadsManagement = () => {
   });
 
   const uniqueAreas = [...new Set(leads.map(lead => lead.area).filter(Boolean))];
+
+  if (!isAuthenticated) {
+    return <PasswordProtection onAuthenticated={handleAuthenticated} />;
+  }
 
   if (loading) {
     return (
