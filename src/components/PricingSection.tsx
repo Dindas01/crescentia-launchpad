@@ -1,57 +1,60 @@
 
 import React from "react";
-import { Check, Sparkles, BarChart3, Clock, Star } from "lucide-react";
+import { Check, Rocket, TrendingUp, Handshake } from "lucide-react";
 import CallToActionButton from "./CallToActionButton";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const plans = [
   {
-    icon: Sparkles,
-    title: "Plano Essencial Crescentia",
+    icon: Rocket,
+    title: "Plano Start",
     price: "500€ – 750€",
-    bonus: "7% do total financiado",
-    description: "Ideal para empresas que estão a iniciar o processo de captação de fundos. É a forma mais rápida e acessível de submeter uma candidatura com apoio especializado.",
+    bonus: "8% do total financiado",
+    description: "Pensado para projetos em fase inicial que procuram apoio eficaz e acessível para submeter uma candidatura com impacto.",
     timeline: "Prazo médio: 2 a 4 semanas",
     features: [
       "Mapa de oportunidades personalizado",
       "Elaboração e submissão da candidatura",
     ],
-    ctaText: "Pedir este plano",
-    microtext: "Vagas limitadas mensalmente"
+    ctaText: "Agendar Diagnóstico Gratuito",
+    microtext: "Ideal para projetos em fase inicial",
+    cardColor: "bg-green-50 border-green-200"
   },
   {
-    icon: BarChart3,
-    title: "Plano Avançado Crescentia",
-    price: "1200€ – 2000€",
-    bonus: "5% do total financiado",
-    description: "Pensado para PME que precisam de um plano sólido e acompanhamento técnico para garantir uma candidatura forte.",
+    icon: TrendingUp,
+    title: "Plano Grow",
+    price: "1.200€ – 2.000€",
+    bonus: "6% do total financiado",
+    description: "Ideal para empresas com ambição de estruturar um projeto sólido e captar financiamento com acompanhamento técnico completo.",
     timeline: "Prazo médio: 4 a 6 semanas",
     features: [
-      "Tudo do Plano Essencial",
+      "Tudo do Plano Start",
       "Elaboração de plano de negócio",
       "Apoio técnico durante o processo",
-      "3 meses de apoio após a aprovação",
+      "3 meses de acompanhamento pós-aprovação",
     ],
     highlighted: true,
-    ctaText: "Pedir este plano",
-    microtext: "Recomendado para empresas em crescimento ativo"
+    ctaText: "Agendar Diagnóstico Gratuito",
+    microtext: "Ideal para empresas com ambição de crescimento",
+    cardColor: "bg-blue-50 border-blue-200"
   },
   {
-    icon: Star,
-    title: "Plano Premium Crescentia",
-    price: "Sobre Consulta",
-    bonus: "4% do total financiado",
-    description: "Para empresas que querem apoio completo e acompanhamento contínuo para maximizar resultados a longo prazo.",
+    icon: Handshake,
+    title: "Plano Partner",
+    price: "Sob consulta",
+    bonus: "3% do total financiado",
+    description: "Para empresas que pretendem uma parceria estratégica contínua e acompanhamento de longo prazo para escalar resultados.",
     timeline: "Prazo: definido caso a caso",
     features: [
-      "Tudo do Plano Avançado",
+      "Tudo do Plano Grow",
       "6 a 12 meses de definição e acompanhamento de KPI's",
       "Reuniões de follow-up estratégicas",
-      "Relatórios de execução",
+      "Relatórios de execução e controlo de performance",
     ],
-    ctaText: "Pedir este plano",
-    microtext: "Programa personalizado com vagas limitadas"
+    ctaText: "Agendar Diagnóstico Gratuito",
+    microtext: "Parceria estratégica de longo prazo",
+    cardColor: "bg-gray-50 border-gray-200"
   },
 ];
 
@@ -71,7 +74,7 @@ const PricingSection = () => {
               <Card 
                 key={idx} 
                 className={`overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
-                  plan.highlighted ? 'border-2 border-business-400 bg-business-50' : 'border border-gray-100'
+                  plan.highlighted ? `border-2 border-blue-400 ${plan.cardColor}` : `border ${plan.cardColor}`
                 }`}
               >
                 <CardHeader className="p-6 text-center relative">
@@ -79,8 +82,8 @@ const PricingSection = () => {
                     <Icon className="text-business-600" size={38} />
                   </span>
                   {plan.highlighted && (
-                    <Badge className="absolute top-2 right-2 bg-business-200 text-business-800 hover:bg-business-300">
-                      Mais completo
+                    <Badge className="absolute top-2 right-2 bg-blue-600 text-white hover:bg-blue-700">
+                      Mais escolhido
                     </Badge>
                   )}
                   <h3 className="text-xl font-bold mb-2 font-montserrat">{plan.title}</h3>
