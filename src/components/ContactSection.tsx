@@ -206,7 +206,7 @@ const ContactSection = () => {
                   </div>
                 </div>
                 : 
-                <form className="space-y-6 md:space-y-7" onSubmit={handleSubmit} autoComplete="off">
+                <form className="space-y-6 md:space-y-7 w-full" onSubmit={handleSubmit} autoComplete="off">
                   <div>
                     <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
                       Nome<span className="text-red-500">*</span>
@@ -262,7 +262,7 @@ const ContactSection = () => {
                     </label>
                     <Textarea id="mensagem" name="mensagem" rows={4} className="font-montserrat" value={form.mensagem} onChange={handleChange} placeholder={defaultMensagem} />
                   </div>
-                  <div>
+                  <div className="pt-2">
                     <SimpleContactButton disabled={loading}>
                       {loading ? "A processar..." : "Peça uma análise gratuita"}
                     </SimpleContactButton>
