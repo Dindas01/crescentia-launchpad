@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import ModernContactButton from "./ModernContactButton";
+import SimpleContactButton from "./SimpleContactButton";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
 const AREAS = ["Indústria", "Comércio", "Serviços", "Turismo", "Tecnologia", "Outro"];
@@ -158,11 +158,17 @@ const ContactSection = () => {
         border: "1px solid #F2F8F2"
       }}>
           <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-business-50 border-b md:border-b-0 md:border-l overflow-hidden">
-            <img src={contactImg} alt="Análise e consultoria empresarial" className="object-cover w-full h-48 md:h-full" loading="lazy" style={{
-            minHeight: "190px",
-            maxHeight: "420px",
-            objectFit: "cover"
-          }} />
+            <img 
+              src={contactImg} 
+              alt="Análise e consultoria empresarial" 
+              className="object-cover w-full h-48 md:h-full" 
+              loading="lazy" 
+              style={{
+                minHeight: "190px",
+                maxHeight: "420px",
+                objectFit: "cover"
+              }} 
+            />
           </div>
           <div className="w-full md:w-7/12 flex items-center">
             <div className="p-6 md:p-10 w-full">
@@ -257,9 +263,9 @@ const ContactSection = () => {
                     <Textarea id="mensagem" name="mensagem" rows={4} className="font-montserrat" value={form.mensagem} onChange={handleChange} placeholder={defaultMensagem} />
                   </div>
                   <div>
-                    <ModernContactButton disabled={loading}>
+                    <SimpleContactButton disabled={loading}>
                       {loading ? "A processar..." : "Peça uma análise gratuita"}
-                    </ModernContactButton>
+                    </SimpleContactButton>
                   </div>
                 </form>}
             </div>
