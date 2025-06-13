@@ -15,12 +15,12 @@ const PromotionalBanner = () => {
           <h2 className="text-business-700 text-2xl md:text-3xl font-bold mb-4 font-norwester" style={{
             fontFamily: "'Norwester', Montserrat, sans-serif",
           }}>
-            Torna o teu projeto elegível e financiado com apoio especializado.
+            Transforma o teu projeto num caso de sucesso com apoio especializado.
           </h2>
           
           <p className="text-business-700 text-lg mb-6 max-w-3xl mx-auto">
-            Candidaturas a fundos Portugal 2030 e PRR com taxa de sucesso comprovada.
-            Análise estratégica, redação técnica e submissão acompanhada — tudo tratado por especialistas.
+            Candidaturas aos fundos Portugal 2030 e PRR com taxa de sucesso comprovada.
+            Análise estratégica, redação técnica e submissão com acompanhamento integral — tratamos de tudo por ti.
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6">
