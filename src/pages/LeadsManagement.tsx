@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
 import {
@@ -13,8 +14,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Mail, Building, Calendar, MessageSquare, Filter } from "lucide-react";
-import PasswordProtection from "@/components/PasswordProtection";
+import { Search, Mail, Building, Calendar, MessageSquare, Filter, LogOut, User } from "lucide-react";
+import type { Session, User as SupabaseUser } from '@supabase/supabase-js';
 
 interface Lead {
   id: number;
@@ -32,23 +33,49 @@ const LeadsManagement = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterArea, setFilterArea] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already authenticated
-    const isAuth = sessionStorage.getItem("leads_authenticated") === "true";
-    setIsAuthenticated(isAuth);
-    
-    if (isAuth) {
-      fetchLeads();
-    } else {
-      setLoading(false);
-    }
-  }, []);
+    // Set up auth state listener
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setSession(session);
+      setUser(session?.user ?? null);
+      
+      if (!session) {
+        navigate("/auth");
+      }
+    });
 
-  const handleAuthenticated = () => {
-    setIsAuthenticated(true);
-    fetchLeads();
+    // Check for existing session
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setSession(session);
+      setUser(session?.user ?? null);
+      
+      if (session) {
+        fetchLeads();
+      } else {
+        navigate("/auth");
+      }
+    };
+
+    checkAuth();
+    return () => subscription.unsubscribe();
+  }, [navigate]);
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast({
+        title: "Erro ao terminar sessão",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      navigate("/auth");
+    }
   };
 
   const fetchLeads = async () => {
@@ -110,8 +137,13 @@ const LeadsManagement = () => {
 
   const uniqueAreas = [...new Set(leads.map(lead => lead.area).filter(Boolean))];
 
-  if (!isAuthenticated) {
-    return <PasswordProtection onAuthenticated={handleAuthenticated} />;
+  // Show loading while checking authentication
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-lg">A verificar autenticação...</div>
+      </div>
+    );
   }
 
   if (loading) {
@@ -125,13 +157,30 @@ const LeadsManagement = () => {
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Gestão de Leads
-          </h1>
-          <p className="text-gray-600">
-            Gerir e acompanhar os contactos recebidos através do website
-          </p>
+        <div className="mb-8 flex justify-between items-start">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Gestão de Leads
+            </h1>
+            <p className="text-gray-600">
+              Gerir e acompanhar os contactos recebidos através do website
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <User className="h-4 w-4" />
+              <span>{user.email}</span>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleLogout}
+              className="flex items-center gap-2"
+            >
+              <LogOut className="h-4 w-4" />
+              Terminar Sessão
+            </Button>
+          </div>
         </div>
 
         {/* Statistics */}
