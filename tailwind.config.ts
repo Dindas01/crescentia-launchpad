@@ -20,6 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 				'norwester': ['Norwester', 'Montserrat', 'sans-serif'],
 				'montserrat': ['Montserrat', 'sans-serif'],
 			},
@@ -57,17 +59,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				business: {
-					50: '#f0faf0',
-					100: '#e0f2e0',
-					200: '#c0e5c0',
-					300: '#a0d890',
-					400: '#A2D48A', // Verde claro da marca
-					500: '#82c86a',
-					600: '#1B5E57', // Verde escuro da marca
-					700: '#0E3E4A', // Azul petróleo da marca
-					800: '#2a9419',
-					900: '#1a7d09',
+				brand: {
+					blue: '#1E40AF',
+					green: '#10B981',
+					orange: '#F59E0B',
+					'gray-light': '#F9FAFB',
+					'gray-dark': '#1F2937',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

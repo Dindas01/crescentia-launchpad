@@ -27,42 +27,36 @@ const infoCards = [
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-business-50 min-h-[calc(100vh-76px)] flex items-center">
-      <div className="container-custom py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fadeInUp">
-            <h1 className="heading-1 text-gray-900 mb-6 font-montserrat">
-              Faz crescer o teu negócio com estratégia e financiamento inteligente.
+    <section className="relative bg-gradient-to-br from-brand-blue via-brand-blue/95 to-brand-green/20 min-h-[calc(100vh-76px)] flex items-center overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }} />
+      </div>
+
+      <div className="container-custom py-20 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 animate-fadeInUp">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-poppins">
+              24 mil milhões de euros em incentivos.
+              <span className="block text-brand-orange mt-2">O teu projeto pode ser o próximo.</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-              <strong>Apoio especializado para aceder a fundos europeus e impulsionar o crescimento da sua PME.</strong>
-              <br /><br />
-              Na Crescentia, ajudamos pequenas e médias empresas portuguesas a aceder a fundos europeus como o Portugal 2030 e o PRR, melhorar a eficiência operacional e crescer com visão. A nossa missão é simples: potenciar o teu negócio com soluções práticas, estratégicas e sustentáveis.
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-inter leading-relaxed">
+              Transformamos a visão da tua empresa em financiamento aprovado. Especialistas em Portugal 2030 e PRR.
             </p>
-            <div className="flex flex-wrap gap-4 mt-10">
-              <CallToActionButton
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <a
                 href="#contact"
-                ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-                size="large"
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-4 text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins inline-block"
               >
-                Peça uma análise gratuita
-              </CallToActionButton>
+                Avaliar o meu projeto
+              </a>
+              <a
+                href="#how-it-works"
+                className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 px-10 py-4 text-lg font-bold rounded-lg backdrop-blur-sm transition-all hover:scale-105 font-poppins inline-block"
+              >
+                Ver como funciona
+              </a>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4 md:gap-6 animate-fadeInUp animate-delay-200">
-            {infoCards.map((card) => {
-              const Icon = card.icon;
-              return (
-                <div
-                  key={card.title}
-                  className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow flex flex-col items-start h-full"
-                >
-                  <Icon className="text-business-600 mb-4" size={32} />
-                  <h3 className="font-bold text-xl mb-2 font-montserrat">{card.title}</h3>
-                  <p className="text-gray-600">{card.description}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

@@ -3,9 +3,12 @@ import SEO from "@/components/SEO";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import WhyUsSection from "@/components/WhyUsSection";
-import PricingSection from "@/components/PricingSection";
+import ImpactSection from "@/components/ImpactSection";
+import ExpertiseSection from "@/components/ExpertiseSection";
+import TimelineSection from "@/components/TimelineSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
@@ -22,9 +25,12 @@ const Index = () => {
 
         <main className="flex-1">
           <HeroSection />
-          <ServicesSection />
-          <WhyUsSection />
-          <PricingSection />
+          <ImpactSection />
+          <ExpertiseSection />
+          <TimelineSection />
+          <AboutSection />
+          <TestimonialsSection />
+          <FinalCTASection />
           <ContactSection />
         </main>
         <Footer />

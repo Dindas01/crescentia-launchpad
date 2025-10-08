@@ -1,12 +1,11 @@
 
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import CallToActionButton from "./CallToActionButton";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="py-4 bg-business-50/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-business-100 rounded-b-xl">
+    <header className="py-4 bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200">
       <div className="container-custom flex justify-between items-center">
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center">
@@ -19,24 +18,22 @@ const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 font-montserrat">
-          <a href="#services" className="text-business-800 hover:text-business-600 font-medium transition-colors">Serviços</a>
-          <a href="#pricing" className="text-business-800 hover:text-business-600 font-medium transition-colors">Pricing</a>
-          <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium transition-colors">Sobre Nós</a>
-          <a href="#contact" className="text-business-800 hover:text-business-600 font-medium transition-colors">Contacto</a>
-          <CallToActionButton
+        <nav className="hidden md:flex items-center space-x-8 font-inter">
+          <a href="#services" className="text-brand-gray-dark hover:text-brand-blue font-semibold transition-colors">Serviços</a>
+          <a href="#how-it-works" className="text-brand-gray-dark hover:text-brand-blue font-semibold transition-colors">Como Funciona</a>
+          <a href="#about" className="text-brand-gray-dark hover:text-brand-blue font-semibold transition-colors">Sobre Nós</a>
+          <a href="#contact" className="text-brand-gray-dark hover:text-brand-blue font-semibold transition-colors">Contacto</a>
+          <a
             href="#contact"
-            ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-            className="ml-4"
-            variant="primary"
+            className="ml-4 bg-brand-orange hover:bg-brand-orange/90 text-white px-6 py-2 rounded-lg font-bold transition-all hover:scale-105 font-poppins text-sm shadow-md"
           >
-            Análise gratuita
-          </CallToActionButton>
+            Avaliar Projeto
+          </a>
         </nav>
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-business-700 p-2 rounded-md hover:bg-business-100/50 transition-colors"
+          className="md:hidden text-brand-gray-dark p-2 rounded-md hover:bg-gray-100 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
@@ -46,29 +43,28 @@ const Header = () => {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-business-50/95 backdrop-blur-sm border-b border-business-100 shadow-lg z-40">
-          <div className="container-custom py-6 flex flex-col space-y-5 font-montserrat">
-            <a href="#services" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg z-40">
+          <div className="container-custom py-6 flex flex-col space-y-5 font-inter">
+            <a href="#services" className="text-brand-gray-dark hover:text-brand-blue font-semibold py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Serviços
             </a>
-            <a href="#pricing" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-              Pricing
+            <a href="#how-it-works" className="text-brand-gray-dark hover:text-brand-blue font-semibold py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Como Funciona
             </a>
-            <a href="#why-us" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
+            <a href="#about" className="text-brand-gray-dark hover:text-brand-blue font-semibold py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Sobre Nós
             </a>
-            <a href="#contact" className="text-business-800 hover:text-business-600 font-medium py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
+            <a href="#contact" className="text-brand-gray-dark hover:text-brand-blue font-semibold py-2 transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Contacto
             </a>
             <div className="pt-2">
-              <CallToActionButton
+              <a
                 href="#contact"
-                ariaLabel="Solicitar análise gratuita de oportunidades de financiamento e crescimento"
-                className="w-full"
+                className="w-full block text-center bg-brand-orange hover:bg-brand-orange/90 text-white px-6 py-3 rounded-lg font-bold transition-all font-poppins shadow-md"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Análise gratuita
-              </CallToActionButton>
+                Avaliar Projeto
+              </a>
             </div>
           </div>
         </div>

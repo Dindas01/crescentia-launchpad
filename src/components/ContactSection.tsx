@@ -135,29 +135,24 @@ const ContactSection = () => {
       setLoading(false);
     }
   };
-  return <section id="contact" className="section-padding bg-white">
+  return <section id="contact" className="section-padding bg-brand-gray-light">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="heading-2 text-gray-900 mb-4 font-montserrat">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-gray-dark mb-4 font-poppins">
             Vamos falar sobre o futuro da tua empresa?
           </h2>
-          <p className="text-lg text-gray-600">Quer estejas a começar um novo projeto ou a procurar novos caminhos para crescer, estamos aqui para ajudar.</p>
+          <p className="text-lg text-gray-600 font-inter">Quer estejas a começar um novo projeto ou a procurar novos caminhos para crescer, estamos aqui para ajudar.</p>
         </div>
         <div className="text-center mb-8 max-w-xl mx-auto">
-          <h3 className="font-norwester text-2xl md:text-3xl text-business-800 mb-1" style={{
-          fontFamily: "Norwester, Montserrat, sans-serif"
-        }}>
+          <h3 className="text-2xl md:text-3xl text-brand-blue mb-2 font-poppins font-bold">
             Peça uma Análise Gratuita
           </h3>
-          <p className="font-montserrat text-lg text-gray-700">
+          <p className="font-inter text-lg text-gray-700">
             Receba uma avaliação personalizada sobre as melhores oportunidades de financiamento e crescimento para o seu negócio.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row-reverse items-stretch max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden" style={{
-        boxShadow: "0 8px 32px 0 rgba(38, 70, 47, 0.09)",
-        border: "1px solid #F2F8F2"
-      }}>
-          <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-business-50 border-b md:border-b-0 md:border-l overflow-hidden">
+        <div className="flex flex-col md:flex-row-reverse items-stretch max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+          <div className="w-full md:w-5/12 min-h-[200px] max-h-[420px] flex items-center justify-center bg-brand-gray-light border-b md:border-b-0 md:border-l overflow-hidden">
             <img 
               src={contactImg} 
               alt="Análise e consultoria empresarial" 
@@ -174,32 +169,30 @@ const ContactSection = () => {
             <div className="p-6 md:p-10 w-full">
               {submitted ? 
                 <div className="text-center py-6 md:py-8 px-4">
-                  <div className="w-20 h-20 rounded-full bg-business-100 flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 rounded-full bg-brand-green/10 flex items-center justify-center mx-auto mb-6">
                     <span className="text-3xl">🎉</span>
                   </div>
-                  <h3 className="text-business-600 font-bold text-2xl font-norwester mb-4" style={{
-                    fontFamily: "Norwester, Montserrat, sans-serif"
-                  }}>
+                  <h3 className="text-brand-green font-bold text-2xl font-poppins mb-4">
                     Pedido recebido com sucesso!
                   </h3>
-                  <p className="text-business-700 font-semibold text-lg mb-4">
+                  <p className="text-brand-gray-dark font-semibold text-lg mb-4 font-inter">
                     Obrigado por confiar na Crescentia.
                   </p>
-                  <div className="space-y-4 mb-6 text-gray-700">
+                  <div className="space-y-4 mb-6 text-gray-700 font-inter">
                     <p>
                       A sua análise gratuita está agora em preparação.<br />
                       Entraremos em contacto brevemente para compreender melhor a sua empresa e apresentar as oportunidades de financiamento mais adequadas.
                     </p>
                   </div>
-                  <div className="mt-6 pt-6 border-t border-business-100">
-                    <p className="text-gray-700 mb-3">
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <p className="text-gray-700 mb-3 font-inter">
                       Se quiser adiantar algum detalhe, pode escrever-nos para:
                     </p>
                     <div className="flex flex-col space-y-2 items-center justify-center">
-                      <a href="mailto:info@crescentia.pt" className="flex items-center text-business-600 hover:text-business-700 transition-colors font-medium">
+                      <a href="mailto:info@crescentia.pt" className="flex items-center text-brand-blue hover:text-brand-blue/80 transition-colors font-medium font-inter">
                         <span className="mr-2">📧</span> info@crescentia.pt
                       </a>
-                      <a href="tel:+351913960220" className="flex items-center text-business-600 hover:text-business-700 transition-colors font-medium">
+                      <a href="tel:+351913960220" className="flex items-center text-brand-blue hover:text-brand-blue/80 transition-colors font-medium font-inter">
                         <span className="mr-2">📞</span> 913 960 220
                       </a>
                     </div>
@@ -208,29 +201,29 @@ const ContactSection = () => {
                 : 
                 <form className="space-y-6 md:space-y-7 w-full" onSubmit={handleSubmit} autoComplete="off">
                   <div>
-                    <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Nome<span className="text-red-500">*</span>
                     </label>
-                    <Input id="nome" name="nome" type="text" className="font-montserrat h-11" value={form.nome} onChange={handleChange} placeholder="João Silva" required />
+                    <Input id="nome" name="nome" type="text" className="font-inter h-11" value={form.nome} onChange={handleChange} placeholder="João Silva" required />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Email profissional<span className="text-red-500">*</span>
                     </label>
-                    <Input id="email" name="email" type="email" inputMode="email" autoCapitalize="off" autoCorrect="off" className={`font-montserrat h-11 ${errors.email ? "border-red-500" : ""}`} value={form.email} onChange={handleChange} placeholder="joao@minhaempresa.pt" required />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                    <Input id="email" name="email" type="email" inputMode="email" autoCapitalize="off" autoCorrect="off" className={`font-inter h-11 ${errors.email ? "border-red-500" : ""}`} value={form.email} onChange={handleChange} placeholder="joao@minhaempresa.pt" required />
+                    {errors.email && <p className="text-red-500 text-sm mt-1 font-inter">{errors.email}</p>}
                   </div>
                   <div>
-                    <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Nome da empresa
                     </label>
-                    <Input id="empresa" name="empresa" type="text" className="font-montserrat h-11" value={form.empresa} onChange={handleChange} placeholder="Silva & Filhos, Lda" />
+                    <Input id="empresa" name="empresa" type="text" className="font-inter h-11" value={form.empresa} onChange={handleChange} placeholder="Silva & Filhos, Lda" />
                   </div>
                   <div>
-                    <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Área de atividade
                     </label>
-                    <select id="area" name="area" className="font-montserrat w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-business-500 bg-white h-11" value={form.area} onChange={handleChange}>
+                    <select id="area" name="area" className="font-inter w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white h-11" value={form.area} onChange={handleChange}>
                       <option value="">Seleciona uma opção</option>
                       {AREAS.map(area => <option key={area} value={area}>
                           {area}
@@ -238,11 +231,11 @@ const ContactSection = () => {
                     </select>
                   </div>
                   <div>
-                    <span className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <span className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Interesse principal
                     </span>
                     <div className="flex flex-col gap-2">
-                      {INTERESSES.map(item => <label key={item.value} className="flex items-center gap-2 font-montserrat">
+                      {INTERESSES.map(item => <label key={item.value} className="flex items-center gap-2 font-inter">
                           <Checkbox checked={form.interesses.includes(item.value)} onCheckedChange={() => handleCheckbox(item.value)} id={item.value} style={{
                       width: 16,
                       height: 16,
@@ -257,15 +250,19 @@ const ContactSection = () => {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-2 font-montserrat">
+                    <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-2 font-inter">
                       Mensagem
                     </label>
-                    <Textarea id="mensagem" name="mensagem" rows={4} className="font-montserrat" value={form.mensagem} onChange={handleChange} placeholder={defaultMensagem} />
+                    <Textarea id="mensagem" name="mensagem" rows={4} className="font-inter" value={form.mensagem} onChange={handleChange} placeholder={defaultMensagem} />
                   </div>
                   <div className="pt-2">
-                    <SimpleContactButton disabled={loading}>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 font-poppins shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
                       {loading ? "A processar..." : "Peça uma análise gratuita"}
-                    </SimpleContactButton>
+                    </button>
                   </div>
                 </form>}
             </div>
