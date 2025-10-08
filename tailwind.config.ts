@@ -60,11 +60,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				brand: {
-					blue: '#1E40AF',
-					green: '#10B981',
-					orange: '#F59E0B',
-					'gray-light': '#F9FAFB',
-					'gray-dark': '#1F2937',
+					blue: 'hsl(var(--brand-blue))',
+					green: 'hsl(var(--brand-green))',
+					orange: 'hsl(var(--brand-orange))',
+					'gray-light': 'hsl(var(--brand-gray-light))',
+					'gray-dark': 'hsl(var(--brand-gray-dark))',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
