@@ -1,29 +1,4 @@
-
-import { Euro, CalendarDays, ChartBar, Rocket } from "lucide-react";
-import CallToActionButton from "./CallToActionButton";
-
-const infoCards = [
-  {
-    icon: Euro,
-    title: "Mais de 23 mil milhões disponíveis até 2030",
-    description: "Financiamento europeu para modernizar, inovar e crescer. Está ao teu alcance.",
-  },
-  {
-    icon: CalendarDays,
-    title: "Candidaturas já em curso e novas oportunidades a abrir",
-    description: "Alguns programas já abriram. Agir agora é garantir acesso.",
-  },
-  {
-    icon: ChartBar,
-    title: "70% das PME não aproveitam os apoios por falta de informação",
-    description: "A maioria perde oportunidades. Informa-te e destaca-te.",
-  },
-  {
-    icon: Rocket,
-    title: "Financiamento até 85% a fundo perdido",
-    description: "Investimentos com apoio direto. O risco é mínimo, o retorno é real.",
-  },
-];
+import { Shield } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -36,25 +11,32 @@ const HeroSection = () => {
       <div className="container-custom py-20 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 animate-fadeInUp">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+              <Shield className="w-4 h-4 text-brand-orange" />
+              <span className="text-white text-sm font-semibold font-inter">Modelo Justo | Transparência Total</span>
+            </div>
+            
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-poppins">
               24 mil milhões de euros em incentivos.
               <span className="block text-brand-orange mt-2">O teu projeto pode ser o próximo.</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-inter leading-relaxed">
-              Transformamos a visão da tua empresa em financiamento aprovado. Especialistas em Portugal 2030 e PRR.
+              Transformamos a visão da tua empresa em financiamento aprovado. 
+              Especialistas em Portugal 2030 e PRR. Risco partilhado, transparência total.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <a
                 href="#contact"
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-4 text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins inline-block"
               >
-                Avaliar o meu projeto
+                Avaliar o Meu Projeto
               </a>
               <a
                 href="#how-it-works"
                 className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 px-10 py-4 text-lg font-bold rounded-lg backdrop-blur-sm transition-all hover:scale-105 font-poppins inline-block"
               >
-                Ver como funciona
+                Como Funciona
               </a>
             </div>
           </div>
@@ -63,4 +45,5 @@ const HeroSection = () => {
     </section>
   );
 };
+
 export default HeroSection;

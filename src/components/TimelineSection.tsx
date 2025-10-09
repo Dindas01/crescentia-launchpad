@@ -1,29 +1,29 @@
-import { Search, MapPin, FileCheck, Trophy } from "lucide-react";
+import { MessageSquare, FileText, CheckCircle2, Trophy } from "lucide-react";
 
 const steps = [
   {
-    icon: Search,
-    number: "01",
+    icon: MessageSquare,
+    number: "1",
     title: "Diagnóstico Gratuito",
-    description: "30 minutos para avaliar elegibilidade",
+    description: "30-45 minutos para avaliar elegibilidade, identificar oportunidades e apresentar proposta. Sem compromisso até aqui.",
   },
   {
-    icon: MapPin,
-    number: "02",
-    title: "Plano Estratégico",
-    description: "Mapeamento de incentivos aplicáveis",
+    icon: FileText,
+    number: "2",
+    title: "Preparação Técnica",
+    description: "Investment fee para iniciar. Elaboração completa da candidatura, gestão de documentação e validações técnicas.",
   },
   {
-    icon: FileCheck,
-    number: "03",
-    title: "Preparação & Submissão",
-    description: "Elaboração técnica completa",
+    icon: CheckCircle2,
+    number: "3",
+    title: "Submissão & Acompanhamento",
+    description: "Submissão oficial, seguimento do processo, resposta a esclarecimentos. Estamos contigo até ao fim.",
   },
   {
     icon: Trophy,
-    number: "04",
-    title: "Sucesso",
-    description: "Honorário apenas após aprovação",
+    number: "4",
+    title: "Aprovação & Success Fee",
+    description: "Success fee calculado sobre valor aprovado. Apoio na execução incluído. Celebramos juntos!",
   },
 ];
 

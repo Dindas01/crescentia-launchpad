@@ -1,20 +1,20 @@
-import { Euro, Shield, TrendingUp } from "lucide-react";
+import { Euro, Scale, TrendingUp } from "lucide-react";
 
 const impactCards = [
   {
     icon: Euro,
     stat: "24 mil milhões €",
-    description: "Disponíveis em incentivos",
+    description: "Disponíveis em incentivos PT 2030",
   },
   {
-    icon: Shield,
-    stat: "0€ risco",
-    description: "Honorário só após aprovação",
+    icon: Scale,
+    stat: "Risco Partilhado",
+    description: "Investment fee + success fee após aprovação",
   },
   {
     icon: TrendingUp,
-    stat: "Acompanhamento integral",
-    description: "Do início à execução",
+    stat: "Acompanhamento Integral",
+    description: "Do diagnóstico à execução",
   },
 ];
 

@@ -2,19 +2,25 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Conseguimos aprovar 450 mil euros para modernização. Processo transparente do início ao fim.",
-    author: "CEO, Indústria Metalomecânica",
-    location: "Porto",
+    quote: "Conseguimos aprovar 180 mil euros para digitalização. O investment fee inicial mostrou seriedade deles, e o success fee após aprovação foi justo. Valeu cada cêntimo.",
+    author: "João Silva",
+    role: "CEO",
+    company: "Indústria Metalomecânica, Porto",
+    rating: 5,
   },
   {
-    quote: "A Crescentia não só tratou da candidatura como nos ajudou a estruturar todo o projeto. Profissionalismo exemplar.",
-    author: "Diretora de Inovação, Setor Tecnológico",
-    location: "Lisboa",
+    quote: "Não foi grátis, mas foi honesto. Pagámos um valor inicial para começar, e depois só a percentagem quando aprovaram. Gostei da transparência desde o início.",
+    author: "Maria Santos",
+    role: "Directora Financeira",
+    company: "Tecnologia, Braga",
+    rating: 5,
   },
   {
-    quote: "Honestidade e competência. Recebemos aconselhamento estratégico valioso que foi além da simples candidatura.",
-    author: "Fundador, Empresa de Exportação",
-    location: "Braga",
+    quote: "Comparei com outras consultoras. Algumas prometiam 'só pagar após aprovação' mas escondiam taxas. A Crescentia foi clara desde a primeira reunião.",
+    author: "Pedro Costa",
+    role: "Fundador",
+    company: "Startup Inovação, Lisboa",
+    rating: 5,
   },
 ];
 
@@ -35,17 +41,26 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+              className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all"
             >
-              <Quote className="text-brand-orange mb-4" size={40} />
-              <p className="text-gray-700 mb-6 font-inter leading-relaxed italic">
+              <div className="text-brand-blue mb-4">
+                <Quote size={40} />
+              </div>
+              <p className="text-gray-700 mb-4 font-inter leading-relaxed">
                 "{testimonial.quote}"
               </p>
-              <div className="border-t border-gray-200 pt-4">
+              <div className="flex gap-1 mb-6">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="text-brand-orange text-xl">⭐</span>
+                ))}
+              </div>
+              <div className="border-t border-gray-100 pt-4">
                 <p className="font-bold text-brand-gray-dark font-poppins">
-                  {testimonial.author}
+                  — {testimonial.author}, {testimonial.role}
                 </p>
-                <p className="text-sm text-gray-500 font-inter">{testimonial.location}</p>
+                <p className="text-gray-600 text-sm font-inter">
+                  {testimonial.company}
+                </p>
               </div>
             </div>
           ))}
