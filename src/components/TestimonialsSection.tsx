@@ -2,24 +2,24 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Conseguimos aprovar 180 mil euros para digitalização. O investment fee inicial mostrou seriedade deles, e o success fee após aprovação foi justo. Valeu cada cêntimo.",
-    author: "João Silva",
-    role: "CEO",
-    company: "Indústria Metalomecânica, Porto",
+    quote: "A equipa foi sempre clara e rápida a responder. Explicaram-nos todo o processo e cumpriram os prazos que tinham prometido. Ficámos satisfeitos com o resultado.",
+    author: "Carla Moreira",
+    role: "Diretora Operacional",
+    company: "Indústria Alimentar, Braga",
     rating: 5,
   },
   {
-    quote: "Não foi grátis, mas foi honesto. Pagámos um valor inicial para começar, e depois só a percentagem quando aprovaram. Gostei da transparência desde o início.",
-    author: "Maria Santos",
-    role: "Directora Financeira",
-    company: "Tecnologia, Braga",
+    quote: "Desde a primeira reunião percebemos que eram transparentes. Não houve promessas irrealistas e a comunicação foi sempre direta. Valorizamos essa honestidade.",
+    author: "Miguel Ferreira",
+    role: "Administrador",
+    company: "Tecnologia e Software, Porto",
     rating: 5,
   },
   {
-    quote: "Comparei com outras consultoras. Algumas prometiam 'só pagar após aprovação' mas escondiam taxas. A Crescentia foi clara desde a primeira reunião.",
-    author: "Pedro Costa",
-    role: "Fundador",
-    company: "Startup Inovação, Lisboa",
+    quote: "Ajudaram-nos a estruturar melhor o projeto antes de submeter. O acompanhamento foi próximo e profissional. Sentimos que estavam investidos no nosso sucesso.",
+    author: "Rui Tavares",
+    role: "Diretor Financeiro",
+    company: "Exportação, Aveiro",
     rating: 5,
   },
 ];

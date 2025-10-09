@@ -5,6 +5,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import SimpleContactButton from "./SimpleContactButton";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
+import contactImg from "@/assets/contact-consultation.jpg";
+
 const AREAS = ["Indústria", "Comércio", "Serviços", "Turismo", "Tecnologia", "Outro"];
 const INTERESSES = [{
   value: "fundos",
@@ -23,7 +25,6 @@ const INTERESSES = [{
   label: "Outro"
 }];
 const defaultMensagem = "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
-const contactImg = "/lovable-uploads/eecc81b9-24e3-4934-8b13-b52dd184d679.png";
 const ContactSection = () => {
   const [form, setForm] = useState({
     nome: "",
