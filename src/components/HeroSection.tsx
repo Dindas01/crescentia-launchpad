@@ -1,45 +1,69 @@
 import { Shield } from "lucide-react";
+import { Button } from "./ui/button";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProcess = () => {
+    const processSection = document.getElementById('processo');
+    if (processSection) {
+      processSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative bg-gradient-to-br from-brand-blue via-brand-blue/95 to-brand-green/20 min-h-[calc(100vh-76px)] flex items-center overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }} />
+    <section className="relative hero-mobile min-h-screen md:min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
       </div>
 
-      <div className="container-custom py-20 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 animate-fadeInUp">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-              <Shield className="w-4 h-4 text-brand-orange" />
-              <span className="text-white text-sm font-semibold font-inter">Modelo Justo | Transparência Total</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-poppins">
-              24 mil milhões de euros em incentivos.
-              <span className="block text-brand-orange mt-2">O teu projeto pode ser o próximo.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-inter leading-relaxed">
-              Transformamos a visão da tua empresa em financiamento aprovado. 
-              Especialistas em Portugal 2030 e PRR. Risco partilhado, transparência total.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <a
-                href="#contact"
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-4 text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins inline-block"
-              >
-                Avaliar o Meu Projeto
-              </a>
-              <a
-                href="#how-it-works"
-                className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 px-10 py-4 text-lg font-bold rounded-lg backdrop-blur-sm transition-all hover:scale-105 font-poppins inline-block"
-              >
-                Como Funciona
-              </a>
-            </div>
-          </div>
+      <div className="container-custom relative z-10 text-center px-4">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-4 md:mb-6 border border-white/20">
+          <Shield className="w-4 h-4" />
+          <span className="text-xs md:text-sm font-semibold font-inter">Risco Partilhado | Transparência</span>
+        </div>
+
+        {/* Main Headline */}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight font-poppins">
+          24 mil milhões € em incentivos
+          <br />
+          <span className="text-white/90">O teu projeto pode ser o próximo</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto font-inter opacity-90">
+          Transformamos a tua visão em financiamento aprovado
+          <br className="hidden md:block" />
+          <span className="block mt-2">Especialistas Portugal 2030 | PRR</span>
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center max-w-md md:max-w-none mx-auto">
+          <Button
+            size="lg"
+            onClick={scrollToContact}
+            className="bg-brand-gold hover:bg-brand-gold/90 text-brand-blue-dark px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins w-full sm:w-auto"
+          >
+            Avaliar o Meu Projeto
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={scrollToProcess}
+            className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-brand-blue px-8 md:px-10 py-5 md:py-6 text-base md:text-lg font-bold rounded-lg transition-all font-poppins w-full sm:w-auto backdrop-blur-sm"
+          >
+            Como Funciona ↓
+          </Button>
         </div>
       </div>
     </section>

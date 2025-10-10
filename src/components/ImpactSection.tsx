@@ -20,21 +20,23 @@ const impactCards = [
 
 const ImpactSection = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container-custom">
-        <div className="grid md:grid-cols-3 gap-8">
+    <section className="section-padding-mobile bg-white">
+      <div className="container-custom px-4">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-8">
           {impactCards.map((card, index) => {
             const Icon = card.icon;
             return (
               <div
                 key={index}
-                className="text-center p-8 rounded-xl border-2 border-brand-blue/10 hover:border-brand-blue/30 transition-all hover:shadow-lg"
+                className={`text-center p-6 md:p-8 rounded-xl border border-brand-blue-light hover:border-brand-blue-medium transition-all hover:shadow-lg ${
+                  index % 2 === 0 ? 'bg-brand-blue-light' : 'bg-white'
+                }`}
               >
-                <Icon className="text-brand-blue mx-auto mb-4" size={48} />
-                <h3 className="text-3xl font-bold text-brand-blue mb-2 font-poppins">
+                <Icon className="text-brand-blue-medium mx-auto mb-3 md:mb-4" size={40} />
+                <h3 className="text-2xl md:text-3xl font-bold text-brand-blue mb-2 font-poppins">
                   {card.stat}
                 </h3>
-                <p className="text-brand-gray-dark font-inter">{card.description}</p>
+                <p className="text-brand-gray-dark font-inter text-sm md:text-base">{card.description}</p>
               </div>
             );
           })}

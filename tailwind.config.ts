@@ -61,8 +61,11 @@ export default {
 				},
 				brand: {
 					blue: 'hsl(var(--brand-blue))',
+					'blue-dark': 'hsl(var(--brand-blue-dark))',
+					'blue-medium': 'hsl(var(--brand-blue-medium))',
+					'blue-light': 'hsl(var(--brand-blue-light))',
+					gold: 'hsl(var(--brand-gold))',
 					green: 'hsl(var(--brand-green))',
-					orange: 'hsl(var(--brand-orange))',
 					'gray-light': 'hsl(var(--brand-gray-light))',
 					'gray-dark': 'hsl(var(--brand-gray-dark))',
 				},

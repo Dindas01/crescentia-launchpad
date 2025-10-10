@@ -35,12 +35,15 @@
 
     --radius: 0.5rem;
     
-    /* Brand colors */
-    --brand-blue: 221 63% 39%;
-    --brand-green: 152 81% 38%;
-    --brand-orange: 38 96% 49%;
-    --brand-gray-light: 210 20% 98%;
-    --brand-gray-dark: 218 28% 13%;
+    /* Brand colors - Azul Profissional */
+    --brand-blue: 205 79% 28%;        /* #0F4C81 - Azul Principal */
+    --brand-blue-dark: 205 82% 21%;   /* #0A3A5E - Azul Escuro */
+    --brand-blue-medium: 205 71% 38%; /* #1E6BA8 - Azul Médio */
+    --brand-blue-light: 202 60% 93%;  /* #E8F2F7 - Azul Claro */
+    --brand-gold: 36 54% 64%;         /* #D4A574 - Dourado CTAs */
+    --brand-green: 149 48% 33%;       /* #2D7A4F - Verde Sucesso */
+    --brand-gray-light: 210 17% 98%;  /* #F5F7FA - Cinza Claro */
+    --brand-gray-dark: 218 19% 17%;   /* #1F2937 - Cinza Texto */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -107,7 +110,11 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-10 md:py-16 lg:py-24;
+  }
+  
+  .section-padding-mobile {
+    @apply py-10 md:py-16;
   }
   
   .container-custom {
@@ -176,5 +183,21 @@
 
 /* Melhorias para botões CTA */
 .cta-button {
-  @apply bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold py-3.5 px-8 rounded-lg transition-all duration-300 shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 whitespace-normal;
+  @apply bg-brand-gold hover:bg-brand-gold/90 text-brand-blue-dark text-base font-semibold py-3.5 px-8 rounded-lg transition-all duration-300 shadow-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:ring-opacity-50 whitespace-normal;
+}
+
+/* Sticky CTA Mobile */
+.sticky-cta-mobile {
+  @apply fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-brand-blue-light shadow-lg p-4 md:hidden;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .hero-mobile {
+    min-height: 80vh !important;
+  }
+  
+  .spacing-mobile-compact {
+    @apply space-y-5;
+  }
 }

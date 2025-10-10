@@ -4,17 +4,18 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ImpactSection from "@/components/ImpactSection";
-import ExpertiseSection from "@/components/ExpertiseSection";
-import TimelineSection from "@/components/TimelineSection";
+import ExpertiseCompactSection from "@/components/ExpertiseCompactSection";
+import TimelineAccordionSection from "@/components/TimelineAccordionSection";
 import PricingModelSection from "@/components/PricingModelSection";
-import WhyUsSection from "@/components/WhyUsSection";
+import WhyUsCarousel from "@/components/WhyUsCarousel";
 import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FinalCTASection from "@/components/FinalCTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 import PromotionalBanner from "@/components/PromotionalBanner";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 const Index = () => {
   return (
@@ -28,17 +29,18 @@ const Index = () => {
         <main className="flex-1">
           <HeroSection />
           <ImpactSection />
-          <ExpertiseSection />
-          <TimelineSection />
+          <ExpertiseCompactSection />
+          <TimelineAccordionSection />
           <PricingModelSection />
-          <WhyUsSection />
+          <WhyUsCarousel />
           <AboutSection />
-          <TestimonialsSection />
+          <TestimonialsCarousel />
           <FinalCTASection />
           <ContactSection />
         </main>
         <Footer />
         <FloatingWhatsappButton />
+        <StickyMobileCTA />
       </div>
     </>
   );
