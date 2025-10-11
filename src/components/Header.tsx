@@ -42,9 +42,9 @@ const Header = () => {
           </a>
           <Button
             onClick={scrollToContact}
-            className="bg-brand-gold hover:bg-brand-gold/90 text-brand-blue-dark font-bold px-6 py-2 rounded-md transition-colors font-poppins shadow-md"
+            className="bg-brand-gold hover:bg-brand-gold/90 text-white font-bold px-6 py-2 rounded-lg transition-all shadow-md hover:shadow-lg font-poppins"
           >
-            Avaliar Projeto
+            Falar Connosco
           </Button>
         </nav>
         
@@ -93,9 +93,9 @@ const Header = () => {
             <div className="pt-4">
               <Button
                 onClick={scrollToContact}
-                className="w-full bg-brand-gold hover:bg-brand-gold/90 text-brand-blue-dark px-6 py-3 rounded-lg font-bold transition-all font-poppins shadow-md"
+                className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white px-6 py-3 rounded-lg font-bold transition-all font-poppins shadow-md"
               >
-                Avaliar Projeto
+                Falar Connosco
               </Button>
             </div>
 

@@ -9,22 +9,22 @@ import contactImg from "@/assets/contact-consultation.jpg";
 
 const AREAS = ["Indústria", "Comércio", "Serviços", "Turismo", "Tecnologia", "Outro"];
 const INTERESSES = [{
-  value: "fundos",
-  label: "Fundos e incentivos (PRR, Portugal 2030)"
-}, {
-  value: "estrategia",
-  label: "Estratégia de negócio"
+  value: "inovacao",
+  label: "Inovação e I&D"
 }, {
   value: "digitalizacao",
-  label: "Digitalização e eficiência"
+  label: "Digitalização"
 }, {
-  value: "projetos",
-  label: "Gestão de projetos"
+  value: "sustentabilidade",
+  label: "Sustentabilidade"
+}, {
+  value: "internacionalizacao",
+  label: "Internacionalização"
 }, {
   value: "outro",
   label: "Outro"
 }];
-const defaultMensagem = "Queres crescer com apoio estratégico? Diz-me como posso ajudar.";
+const defaultMensagem = "Quero saber mais sobre as oportunidades de financiamento para a minha empresa.";
 const ContactSection = () => {
   const [form, setForm] = useState({
     nome: "",
@@ -140,16 +140,18 @@ const ContactSection = () => {
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-gray-dark mb-4 font-poppins">
-            Vamos falar sobre o futuro da tua empresa?
+            Pronto para fazer crescer a tua empresa?
           </h2>
-          <p className="text-lg text-gray-600 font-inter">Quer estejas a começar um novo projeto ou a procurar novos caminhos para crescer, estamos aqui para ajudar.</p>
+          <p className="text-lg text-gray-600 font-inter">
+            Quer estejas a começar um novo projeto ou a explorar oportunidades de financiamento, vamos conversar.
+          </p>
         </div>
         <div className="text-center mb-8 max-w-xl mx-auto">
           <h3 className="text-2xl md:text-3xl text-brand-blue mb-2 font-poppins font-bold">
-            Peça uma Análise Gratuita
+            Agenda uma Reunião Exploratória
           </h3>
           <p className="font-inter text-lg text-gray-700">
-            Receba uma avaliação personalizada sobre as melhores oportunidades de financiamento e crescimento para o seu negócio.
+            Descobre que incentivos se aplicam à tua empresa e como podemos ajudar a tornar o teu projeto realidade.
           </p>
         </div>
         <div className="flex flex-col md:flex-row-reverse items-stretch max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
@@ -174,15 +176,14 @@ const ContactSection = () => {
                     <span className="text-3xl">🎉</span>
                   </div>
                   <h3 className="text-brand-green font-bold text-2xl font-poppins mb-4">
-                    Pedido recebido com sucesso!
+                    Pedido recebido!
                   </h3>
                   <p className="text-brand-gray-dark font-semibold text-lg mb-4 font-inter">
-                    Obrigado por confiar na Crescentia.
+                    Obrigado pelo teu interesse.
                   </p>
                   <div className="space-y-4 mb-6 text-gray-700 font-inter">
                     <p>
-                      A sua análise gratuita está agora em preparação.<br />
-                      Entraremos em contacto brevemente para compreender melhor a sua empresa e apresentar as oportunidades de financiamento mais adequadas.
+                      Entraremos em contacto brevemente para agendar a reunião exploratória e perceber como podemos ajudar a tua empresa a aceder aos incentivos disponíveis.
                     </p>
                   </div>
                   <div className="mt-6 pt-6 border-t border-gray-200">
@@ -260,9 +261,9 @@ const ContactSection = () => {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 font-poppins shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white px-8 py-3 rounded-lg font-bold transition-all hover:scale-105 font-poppins shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {loading ? "A processar..." : "Peça uma análise gratuita"}
+                      {loading ? "A processar..." : "Agendar Reunião"}
                     </button>
                   </div>
                 </form>}

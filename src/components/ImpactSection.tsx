@@ -4,17 +4,17 @@ const impactCards = [
   {
     icon: Euro,
     stat: "24 mil milhões €",
-    description: "Disponíveis em incentivos PT 2030",
-  },
-  {
-    icon: Scale,
-    stat: "Risco Partilhado",
-    description: "Investment fee + success fee após aprovação",
+    description: "Disponíveis no Portugal 2030 e PRR",
   },
   {
     icon: TrendingUp,
+    stat: "4 Áreas de Especialização",
+    description: "Inovação, Digitalização, Sustentabilidade, Internacionalização",
+  },
+  {
+    icon: Scale,
     stat: "Acompanhamento Integral",
-    description: "Do diagnóstico à execução",
+    description: "Da análise à aprovação e implementação",
   },
 ];
 

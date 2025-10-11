@@ -4,24 +4,24 @@ import { Button } from "./ui/button";
 
 const testimonials = [
   {
-    quote: "A equipa foi sempre clara e rápida a responder. Explicaram-nos todo o processo e cumpriram os prazos que tinham prometido. Ficámos satisfeitos com o resultado.",
-    author: "Carla Moreira",
-    role: "Diretora Operacional",
-    company: "Indústria Alimentar, Braga",
+    quote: "Trabalhar com a Crescentia permitiu-nos aceder a financiamento que considerávamos impossível. O acompanhamento foi personalizado e o processo muito mais simples do que imaginávamos.",
+    author: "Empresa do Setor Industrial",
+    role: "Diretor Geral",
+    company: "Porto",
     rating: 5,
   },
   {
-    quote: "Desde a primeira reunião percebemos que eram transparentes. Não houve promessas irrealistas e a comunicação foi sempre direta. Valorizamos essa honestidade.",
-    author: "Miguel Ferreira",
-    role: "Administrador",
-    company: "Tecnologia e Software, Porto",
+    quote: "A equipa esteve sempre disponível para esclarecer dúvidas e ajudou-nos a estruturar melhor o nosso projeto. A candidatura foi aprovada e estamos agora na fase de implementação.",
+    author: "PME de Tecnologia",
+    role: "CEO",
+    company: "Lisboa",
     rating: 5,
   },
   {
-    quote: "Ajudaram-nos a estruturar melhor o projeto antes de submeter. O acompanhamento foi próximo e profissional. Sentimos que estavam investidos no nosso sucesso.",
-    author: "Rui Tavares",
-    role: "Diretor Financeiro",
-    company: "Exportação, Aveiro",
+    quote: "Transparência e profissionalismo em todas as fases. Explicaram-nos cada etapa com clareza e mantiveram-nos informados ao longo de todo o processo até à aprovação.",
+    author: "Empresa de Serviços",
+    role: "Diretora Financeira",
+    company: "Braga",
     rating: 5,
   },
 ];

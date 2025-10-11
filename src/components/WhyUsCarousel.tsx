@@ -4,28 +4,28 @@ import { Button } from "./ui/button";
 
 const reasons = [
   {
-    title: "Risco Partilhado de Verdade",
-    description: "Investment fee justo + success fee só após aprovação. Ganhamos juntos.",
+    title: "Relação de Longo Prazo",
+    description: "Não somos apenas consultores - somos parceiros estratégicos no teu crescimento.",
   },
   {
     title: "Acompanhamento Integral",
-    description: "Não desaparecemos após submissão. Estamos contigo até ao fim.",
+    description: "Da análise inicial à aprovação e implementação. Estamos contigo em todas as fases.",
   },
   {
-    title: "Transparência Total",
-    description: "Sabes sempre custos, estado do projeto, e próximos passos.",
+    title: "Transparência no Processo",
+    description: "Sabes sempre o estado do projeto, próximos passos e o que esperamos em cada fase.",
   },
   {
     title: "Experiência Comprovada",
-    description: "Candidaturas aprovadas em múltiplos sectores e tipologias.",
+    description: "Candidaturas aprovadas em múltiplos sectores: indústria, tecnologia, serviços e comércio.",
   },
   {
-    title: "Modelo Escalonado Justo",
-    description: "Pequenos e grandes projetos tratados com equidade na % success fee.",
+    title: "Foco em Resultados",
+    description: "Cada candidatura é estruturada para maximizar a probabilidade de aprovação.",
   },
   {
-    title: "Filtramos Contigo",
-    description: "Se o projeto não é viável, dizemos. Não desperdiçamos o teu tempo.",
+    title: "Análise Honesta",
+    description: "Se o projeto não for elegível ou tiver poucas hipóteses, dizemos. Poupamos o teu tempo.",
   },
 ];
 
@@ -63,11 +63,11 @@ const WhyUsCarousel = () => {
     <section className="section-padding-mobile bg-brand-blue-medium text-white">
       <div className="container-custom px-4">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 font-poppins">
-            Porque a Crescentia?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4 font-poppins">
+            Porquê Escolher a Crescentia?
           </h2>
-          <p className="text-base md:text-lg opacity-90 max-w-2xl mx-auto font-inter">
-            6 razões para escolher o nosso modelo
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto font-inter">
+            Mais do que consultoria - uma parceria estratégica para o teu crescimento
           </p>
         </div>
 
