@@ -51,13 +51,13 @@ const CallToActionButton: React.FC<CallToActionButtonProps> = ({
     font-montserrat
     font-semibold
     shadow-md
-    whitespace-normal
+    whitespace-nowrap
     min-h-[52px]
     flex items-center
     justify-center
     transition-all
     duration-300
-    leading-snug
+    leading-tight
     w-full
     md:w-auto
     focus:outline-none
@@ -66,6 +66,8 @@ const CallToActionButton: React.FC<CallToActionButtonProps> = ({
     focus-visible:ring-offset-2
     hover:scale-105
     transform
+    overflow-visible
+    mx-auto
   `.replace(/\s+/g, " ");
   
   if (href) {

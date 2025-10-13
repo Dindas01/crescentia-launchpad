@@ -10,10 +10,10 @@ const StickyMobileCTA = () => {
 
   return (
     <div className="sticky-cta-mobile">
-      <div className="container-custom">
+      <div className="container-custom px-4">
         <Button
           onClick={handleClick}
-          className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white font-bold py-4 text-base shadow-lg"
+          className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white font-bold py-4 text-base shadow-lg min-h-[52px] whitespace-nowrap overflow-visible max-w-full"
           size="lg"
         >
           Agendar Reunião →

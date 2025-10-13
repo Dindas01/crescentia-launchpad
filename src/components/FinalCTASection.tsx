@@ -23,7 +23,7 @@ const FinalCTASection = () => {
         <Button
           onClick={scrollToContact}
           size="lg"
-          className="bg-brand-gold hover:bg-brand-gold/90 text-white px-8 md:px-12 py-5 md:py-6 text-base md:text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins w-full sm:w-auto"
+          className="bg-brand-gold hover:bg-brand-gold/90 text-white px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 text-base md:text-lg font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 font-poppins w-full sm:w-auto min-h-[52px] whitespace-nowrap overflow-visible mx-auto max-w-full"
         >
           Agenda a Tua Reunião Exploratória
         </Button>

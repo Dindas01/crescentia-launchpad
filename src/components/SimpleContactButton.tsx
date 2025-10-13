@@ -18,10 +18,12 @@ const SimpleContactButton: React.FC<SimpleContactButtonProps> = ({
       focus:outline-none focus:ring-2 focus:ring-business-500 focus:ring-offset-2
       shadow-md hover:shadow-lg
       min-h-[48px] md:min-h-[52px]
-      min-w-[280px] md:min-w-[320px]
       flex items-center justify-center
       text-center leading-tight
       whitespace-nowrap
+      overflow-visible
+      mx-auto
+      max-w-full
       ${className}
     `}
     {...props}

@@ -21,16 +21,18 @@ const ModernContactButton: React.FC<ModernContactButtonProps> = ({
       hover:scale-105 focus:outline-none focus-visible:ring-2 
       focus-visible:ring-business-700 focus-visible:ring-offset-2
       min-h-[56px] md:min-h-[60px]
+      overflow-visible
+      mx-auto
+      max-w-full
       ${className}
     `}
     style={{
       letterSpacing: "0.01em",
       fontFamily: "'Montserrat', Norwester, sans-serif",
-      overflow: "visible",
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      whiteSpace: "normal",
+      whiteSpace: "nowrap",
       lineHeight: "1.2"
     }}
     {...props}
